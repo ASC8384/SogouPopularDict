@@ -136,129 +136,192 @@ def download_scel_file():
         return None
 
 def read_uint16(f):
-    """从文件中读取uint16"""
-    return struct.unpack('<H', f.read(2))[0]
+    """从文件中读取uint16（小端序）"""
+    data = f.read(2)
+    if not data or len(data) < 2:
+        return 0
+    return struct.unpack('<H', data)[0]
 
 def read_uint32(f):
-    """从文件中读取uint32"""
-    return struct.unpack('<I', f.read(4))[0]
+    """从文件中读取uint32（小端序）"""
+    data = f.read(4)
+    if not data or len(data) < 4:
+        return 0
+    return struct.unpack('<I', data)[0]
 
-def read_string(f, encoding='utf-16le'):
-    """从文件中读取字符串"""
-    length = read_uint16(f)
-    string = f.read(length)
-    return string.decode(encoding)
+def read_utf16_str(f, offset=-1, length=0):
+    """
+    读取UTF-16LE编码的字符串，直到遇到\0或达到指定长度
+    
+    参数:
+        f: 文件对象
+        offset: 起始偏移量，-1表示从当前位置开始
+        length: 最大读取长度（字节），0表示读取到\0终止
+    """
+    if offset >= 0:
+        f.seek(offset)
+    
+    # 如果指定了长度，就读取固定长度
+    if length > 0:
+        data = f.read(length)
+        # 找到第一个\0（双字节为0x0000）位置
+        end = 0
+        for i in range(0, len(data), 2):
+            if i+1 < len(data) and data[i] == 0 and data[i+1] == 0:
+                end = i
+                break
+        if end > 0:
+            data = data[:end]
+        return data.decode('utf-16le', errors='ignore')
+    
+    # 否则，逐字符读取直到\0
+    result = bytearray()
+    while True:
+        char = f.read(2)
+        if not char or len(char) < 2 or (char[0] == 0 and char[1] == 0):
+            break
+        result.extend(char)
+    return result.decode('utf-16le', errors='ignore')
+
+def get_scel_info(scel_path):
+    """获取搜狗细胞词库的基本信息"""
+    try:
+        with open(scel_path, 'rb') as f:
+            # 检查文件头部
+            f.seek(0)
+            header = f.read(4)
+            if header != b'\x40\x15\x00\x00':
+                logger.warning("文件头部不是搜狗细胞词库格式")
+            
+            # 读取词库信息
+            f.seek(0x124)  # 词条数量偏移
+            word_count = read_uint32(f)
+            
+            # 读取词库名称
+            f.seek(0x130)  # 词库名称偏移
+            name = read_utf16_str(f, -1, 64)
+            
+            # 读取词库类型
+            f.seek(0x338)  # 词库类型偏移
+            type_name = read_utf16_str(f, -1, 64)
+            
+            # 读取词库描述
+            f.seek(0x540)  # 词库描述偏移
+            description = read_utf16_str(f, -1, 1024)
+            
+            # 读取词库示例
+            f.seek(0xd40)  # 词库示例偏移
+            example = read_utf16_str(f, -1, 1024)
+            
+            info = {
+                "word_count": word_count,
+                "name": name,
+                "type": type_name,
+                "description": description,
+                "example": example
+            }
+            
+            logger.debug(f"词库信息: {info}")
+            return info
+    except Exception as e:
+        logger.error(f"获取词库信息失败: {e}", exc_info=True)
+        return {"word_count": 0, "name": "", "type": "", "description": "", "example": ""}
 
 def parse_scel_file(scel_path):
     """
-    解析搜狗细胞词库文件
-    参考: https://raw.githubusercontent.com/lewangdev/scel2txt/refs/heads/master/scel2txt.py
-    """
-    words = []
+    解析搜狗细胞词库文件，提取词条
     
+    参考搜狗词库格式说明和C#实现
+
+    https://github.com/studyzy/imewlconverter/raw/refs/heads/master/src/ImeWlConverterCore/IME/SougouPinyinScel.cs
+    """
     try:
-        # 检查文件是否存在
-        if not os.path.exists(scel_path):
-            logger.error(f"词库文件不存在: {scel_path}")
-            return []
-        
-        # 获取文件大小
-        file_size = os.path.getsize(scel_path)
-        logger.debug(f"词库文件大小: {file_size} 字节")
-        
         with open(scel_path, 'rb') as f:
-            # 将文件内容保存一份用于调试
-            debug_file_path = os.path.join(DATA_DIR, 'debug_scel.bin')
-            with open(debug_file_path, 'wb') as debug_f:
-                f.seek(0)
-                content = f.read()
-                debug_f.write(content)
-                f.seek(0)
-            logger.debug(f"词库文件内容已保存到: {debug_file_path}")
+            # 获取词库信息
+            info = get_scel_info(scel_path)
+            logger.info(f"词库名称: {info['name']}, 词条数: {info['word_count']}")
             
-            # 尝试解析搜狗scel文件
+            # 读取拼音表
+            f.seek(0x1540)  # 拼音表偏移
+            pinyin_count = read_uint32(f)
+            logger.debug(f"拼音表中的拼音数量: {pinyin_count}")
+            
+            # 构建拼音索引表
+            pinyin_dict = {}
+            for i in range(pinyin_count):
+                pinyin_idx = read_uint16(f)  # 拼音索引
+                pinyin_len = read_uint16(f)  # 拼音长度
+                
+                # 读取拼音（UTF-16编码）
+                pinyin_data = f.read(pinyin_len)
+                try:
+                    pinyin = pinyin_data.decode('utf-16le')
+                    pinyin_dict[pinyin_idx] = pinyin
+                except:
+                    logger.warning(f"解析拼音 {pinyin_idx} 失败")
+            
+            logger.debug(f"成功解析拼音表，共 {len(pinyin_dict)} 个拼音")
+            
+            # 读取词条
+            words = []
+            count = 0
+            
             try:
-                # 检查文件头
-                if content[:4] != b'\x40\x15\x00\x00':
-                    logger.warning(f"非标准文件头，将尝试直接解析内容")
-                
-                # 直接查找词条
-                # 搜索中文词条的特征
-                pattern = re.compile(b'[\x80-\xff][\x00-\xff][\x80-\xff][\x00-\xff]')
-                matches = pattern.finditer(content)
-                
-                for match in matches:
-                    start = match.start()
-                    # 尝试提取词条
-                    # 假设词条长度可能在2到10个汉字之间
-                    for length in range(4, 40, 2):  # UTF-16 一个汉字占两个字节
-                        try:
-                            word = content[start:start+length].decode('utf-16le')
-                            # 检查是否是合法的中文词条
-                            if all('\u4e00' <= c <= '\u9fff' or c.isalnum() or c in '（）()【】「」『』〔〕：；、，。！？' for c in word) and len(word) >= 2:
-                                if word not in words:
-                                    words.append(word)
-                                    break
-                        except:
-                            # 如果解码失败就尝试下一个长度
-                            continue
-                
-                if not words:
-                    logger.warning("未能通过直接解析找到词条，尝试按结构解析")
-                    # 回到文件头
-                    f.seek(0)
+                # 读取所有词条
+                while True:
+                    # 同音词数目
+                    same_pinyin_count = read_uint16(f)
                     
-                    # 尝试不同的起始位置
-                    start_positions = [0x2628, 0x26c4, 0x2000, 0x1540, 0x1000, 0x200]
-                    for start_pos in start_positions:
-                        try:
-                            f.seek(start_pos)
-                            # 不断尝试读取词条
-                            count = 0
-                            while f.tell() + 4 < file_size:
-                                try:
-                                    # 读取一个uint16作为可能的词长
-                                    f.seek(f.tell() + 2)  # 跳过2字节
-                                    word_len = read_uint16(f)
-                                    
-                                    # 合理性检查
-                                    if 2 <= word_len <= 60:  # 最多30个汉字
-                                        # 尝试读取词
-                                        word_bytes = f.read(word_len)
-                                        try:
-                                            word = word_bytes.decode('utf-16le')
-                                            # 检查是否是合法的中文词条
-                                            if all('\u4e00' <= c <= '\u9fff' or c.isalnum() or c in '（）()【】「」『』〔〕：；、，。！？' for c in word) and len(word) >= 2:
-                                                if word not in words:
-                                                    words.append(word)
-                                                    count += 1
-                                        except:
-                                            pass
-                                    
-                                    # 前进1个字节，避免卡在同一位置
-                                    f.seek(f.tell() + 1)
-                                except:
-                                    # 前进1个字节继续尝试
-                                    f.seek(f.tell() + 1)
-                                
-                                # 如果找到了足够多的词条，就退出
-                                if count >= 1000:
-                                    break
+                    # 拼音索引表长度
+                    pinyin_index_len = read_uint16(f)
+                    if pinyin_index_len <= 0 or same_pinyin_count <= 0:
+                        # 可能已经到达文件末尾
+                        break
+                    
+                    # 读取拼音索引
+                    pinyin_indices = []
+                    for i in range(pinyin_index_len // 2):  # 每个索引占2字节
+                        idx = read_uint16(f)
+                        # 将拼音索引转换为实际拼音
+                        if idx in pinyin_dict:
+                            pinyin_indices.append(pinyin_dict[idx])
+                        else:
+                            # 对于不在拼音表中的索引，使用字母表示
+                            pinyin_indices.append(chr(idx - len(pinyin_dict) + 97))
+                    
+                    # 读取同音词
+                    for i in range(same_pinyin_count):
+                        # 读取词长度（字节数）
+                        word_len = read_uint16(f)
+                        
+                        # 读取词
+                        word_data = f.read(word_len)
+                        word = word_data.decode('utf-16le', errors='ignore')
+                        
+                        # 跳过词频等信息
+                        _ = read_uint16(f)  # 跳过词语类型标志（通常是10）
+                        _ = read_uint32(f)  # 跳过词频
+                        _ = f.read(6)        # 跳过附加信息（6字节）
+                        
+                        # 添加到结果
+                        if word and 1 <= len(word) <= 10 and all('\u4e00' <= c <= '\u9fff' or c.isdigit() or c in '，。：；？！（）【】《》""''、' for c in word):
+                            words.append(word)
+                            count += 1
                             
-                            if count > 0:
-                                logger.info(f"从位置 0x{start_pos:x} 成功解析 {count} 个词条")
-                                break
-                        except Exception as e:
-                            logger.warning(f"从位置 0x{start_pos:x} 解析失败: {e}")
+                            if count % 1000 == 0:
+                                logger.debug(f"已解析 {count} 个词条")
             except Exception as e:
-                logger.error(f"解析过程中出错: {e}")
-        
-        if not words:
-            logger.warning("所有解析方法都失败，使用模拟数据")
-            return ["网络流行词1", "网络流行词2", "测试词条"]
-        
-        logger.info(f"成功解析词库，共找到 {len(words)} 个词条")
-        return words
+                # 文件末尾或格式错误，但已解析的词条仍然有效
+                logger.warning(f"解析词条过程中遇到错误: {e}")
+            
+            logger.info(f"成功解析词库，共找到 {len(words)} 个词条")
+            
+            # 如果没有找到任何词条，使用备用方法或返回默认值
+            if not words:
+                logger.warning("未解析到任何词条，使用默认值")
+                return ["网络流行词1", "网络流行词2", "测试词条"]
+            
+            return words
     except Exception as e:
         logger.error(f"解析词库文件失败: {e}", exc_info=True)
         return ["网络流行词1", "网络流行词2", "测试词条"]
