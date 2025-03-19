@@ -23,8 +23,8 @@ logger = logging.getLogger('rime_converter')
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 CURRENT_TXT_PATH = os.path.join(DATA_DIR, 'sogou_network_words_current.txt')
 ACCUMULATED_TXT_PATH = os.path.join(DATA_DIR, 'sogou_network_words_accumulated.txt')
-RIME_CURRENT_PATH = os.path.join(DATA_DIR, 'sogou_network_words_current.dict.yaml')
-RIME_ACCUMULATED_PATH = os.path.join(DATA_DIR, 'sogou_network_words_accumulated.dict.yaml')
+RIME_CURRENT_PATH = os.path.join(DATA_DIR, 'luna_pinyin.sogoupopular.current.dict.yaml')
+RIME_ACCUMULATED_PATH = os.path.join(DATA_DIR, 'luna_pinyin.sogoupopular.dict.yaml')
 
 def load_words_from_txt(txt_path):
     """从TXT文件加载词条"""
@@ -51,29 +51,7 @@ def get_pinyin(word):
 def convert_to_rime_yaml(words, output_path, dict_name):
     """将词条转换为Rime YAML格式"""
     # 准备YAML头部
-    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    header = {
-        'name': dict_name,
-        'version': now,
-        'sort': 'by_weight',
-        'use_preset_vocabulary': False,
-        'import_tables': [],
-        'columns': ['text', 'code', 'weight'],
-        'encoder': {
-            'rules': {
-                'xlit/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/',
-            }
-        }
-    }
-    
-    # 准备词条
-    entries = []
-    for i, word in enumerate(words):
-        pinyin = get_pinyin(word)
-        if pinyin:
-            # 权重从高到低排序，新词条权重高
-            weight = len(words) - i
-            entries.append(f"{word}\t{pinyin}\t{weight}")
+    now = datetime.now().strftime('%Y.%m.%d')
     
     # 写入YAML文件
     try:
@@ -82,19 +60,39 @@ def convert_to_rime_yaml(words, output_path, dict_name):
             f.write("# Rime dictionary\n")
             f.write("# encoding: utf-8\n")
             f.write("#\n")
-            f.write(f"# {dict_name}\n")
-            f.write(f"# 自动生成于 {now}\n")
-            f.write("#\n\n")
+            f.write("# Luna Pinyin Extended Dictionary（明月拼音扩充词库）\n")
+            f.write("# 网络流行新词（当前版本）\n" if "current" in output_path else "# 网络流行新词（累积版本）\n")
+            f.write("#\n")
+            f.write("# https://github.com/ASC8384/SogouPopularDict\n")
+            f.write("# mailto:ASC_8384atfoxmail.com\n")
+            f.write("#\n")
+            f.write("# 部署位置：\n")
+            f.write("# ~/.config/ibus/rime  (Linux)\n")
+            f.write("# ~/Library/Rime  (Mac OS)\n")
+            f.write("# %APPDATA%\\Rime  (Windows)\n")
+            f.write("#\n")
+            f.write("# 重新部署即可\n")
+            f.write("#\n")
+            f.write("---\n")
             
-            # 写入YAML配置
-            yaml.dump(header, f, allow_unicode=True, default_flow_style=False)
+            # 根据是当前版本还是累积版本设置不同的name
+            name = "luna_pinyin.sogoupopular.current" if "current" in output_path else "luna_pinyin.sogoupopular"
+            
+            f.write(f"name: {name}\n")
+            f.write(f"version: \"{now}\"\n")
+            f.write("sort: by_weight\n")
+            f.write("use_preset_vocabulary: true\n")
             
             # 写入分隔符
-            f.write("\n...\n\n")
+            f.write("...\n\n")
             
             # 写入词条
-            for entry in entries:
-                f.write(f"{entry}\n")
+            for i, word in enumerate(words):
+                pinyin = get_pinyin(word)
+                if pinyin:
+                    # 权重从高到低排序，新词条权重高
+                    weight = len(words) - i
+                    f.write(f"{word}\t{pinyin}\t{weight}\n")
         
         logger.info(f"已生成Rime词库: {output_path}")
         return True

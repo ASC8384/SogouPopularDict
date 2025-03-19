@@ -19,8 +19,8 @@
 ├── data/                # 存放词库数据
 │   ├── sogou_network_words_current.txt        # 当前版本词库（纯文本）
 │   ├── sogou_network_words_accumulated.txt    # 累积版本词库（纯文本）
-│   ├── sogou_network_words_current.dict.yaml  # 当前版本词库（Rime格式）
-│   ├── sogou_network_words_accumulated.dict.yaml  # 累积版本词库（Rime格式）
+│   ├── luna_pinyin.sogoupopular.current.dict.yaml  # 当前版本词库（Rime格式）
+│   ├── luna_pinyin.sogoupopular.dict.yaml     # 累积版本词库（Rime格式）
 │   └── version_info.json  # 版本信息
 ├── scripts/             # 脚本文件
 │   ├── download_and_convert.py  # 下载并转换搜狗词库
@@ -37,8 +37,8 @@
 1. 克隆仓库：
 
 ```bash
-git clone https://github.com/yourusername/sougou_dict.git
-cd sougou_dict
+git clone https://github.com/ASC8384/SogouPopularDict.git
+cd SogouPopularDict
 ```
 
 2. 安装依赖：
@@ -79,7 +79,7 @@ patch:
   luna_pinyin:
     dictionary: luna_pinyin
     custom_dict:
-      - sogou_network_words_accumulated
+      - luna_pinyin.sogoupopular
 ```
 
 3. 重新部署Rime输入法。
