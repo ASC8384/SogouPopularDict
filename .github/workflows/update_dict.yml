@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 获取完整历史以便能够正确合并
         
       - name: 设置Python环境
         uses: actions/setup-python@v4
