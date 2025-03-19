@@ -86,13 +86,12 @@ def convert_to_rime_yaml(words, output_path, dict_name):
             # 写入分隔符
             f.write("...\n\n")
             
-            # 写入词条
-            for i, word in enumerate(words):
+            # 写入词条 - 移除权重计算
+            for word in words:
                 pinyin = get_pinyin(word)
                 if pinyin:
-                    # 权重从高到低排序，新词条权重高
-                    weight = len(words) - i
-                    f.write(f"{word}\t{pinyin}\t{weight}\n")
+                    # 不再计算权重，直接写入词条和拼音
+                    f.write(f"{word}\t{pinyin}\n")
         
         logger.info(f"已生成Rime词库: {output_path}")
         return True
