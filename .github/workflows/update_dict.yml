@@ -6,6 +6,10 @@ on:
     - cron: '0 3 * * *'
   workflow_dispatch:  # 允许手动触发
 
+# 添加权限配置
+permissions:
+  contents: write
+
 jobs:
   update-dict:
     runs-on: ubuntu-latest
