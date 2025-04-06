@@ -16,7 +16,7 @@
 #
 ---
 name: luna_pinyin.sogoupopular
-version: "2025.04.05"
+version: "2025.04.06"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -369,6 +369,7 @@ use_preset_vocabulary: true
 万物奔腾	wan wu ben teng
 万物时	wan wu shi
 万物皆可独攀	wan wu jie ke du pan
+万物花开	wan wu hua kai
 万疆	wan jiang
 万相	wan xiang
 万相之王	wan xiang zhi wang
@@ -1221,6 +1222,7 @@ use_preset_vocabulary: true
 丽江机场道歉	li jiang ji chang dao qian
 举大旗	ju da qi
 举杯敬此年	ju bei jing ci nian
+举灯牌	ju deng pai
 举照片	ju zhao pian
 举重选手	ju zhong xuan shou
 乃万自证	nai wan zi zheng
@@ -2026,6 +2028,7 @@ use_preset_vocabulary: true
 代播	dai bo
 代烧	dai shao
 代表色	dai biao se
+代言到期	dai yan dao qi
 代露娃	dai lu wa
 代露娃对接	dai lu wa dui jie
 代露娃常华森	dai lu wa chang hua sen
@@ -3217,6 +3220,7 @@ use_preset_vocabulary: true
 关键词看改革	guan jian ci kan gai ge
 关门炮	guan men pao
 兴奋剂检测	xing fen ji jian ce
+兴庆宫	xing qing gong
 兵乓	bing pang
 兵乓球	bing pang qiu
 兵捉贼	bing zhuo zei
@@ -4100,6 +4104,7 @@ use_preset_vocabulary: true
 勇士大丰收	yong shi da feng shou
 勇士大胜爵士	yong shi da sheng jue shi
 勇士惜败雷霆	yong shi xi bai lei ting
+勇士战胜掘金	yong shi zhan sheng jue jin
 勇士战胜活塞	yong shi zhan sheng huo sai
 勇士战胜灰熊	yong shi zhan sheng hui xiong
 勇士战胜雷霆	yong shi zhan sheng lei ting
@@ -4566,6 +4571,7 @@ use_preset_vocabulary: true
 卡特致谢科比	ka te zhi xie ke bi
 卡琪娜	ka qi na
 卡琳娜中文	ka lin na zhong wen
+卡琳娜实力	ka lin na shi li
 卡瓦哈尔重伤	ka wa ha er zhong shang
 卡皮巴拉	ka pi ba la
 卡码	ka ma
@@ -5330,6 +5336,7 @@ use_preset_vocabulary: true
 向佐火到韩国	xiang zuo huo dao han guo
 向佐秀智合照	xiang zuo xiu zhi he zhao
 向佐穿书	xiang zuo chuan shu
+向佐肌肉肚兜	xiang zuo ji rou du dou
 向佐致歉	xiang zuo zhi qian
 向佐表情包	xiang zuo biao qing bao
 向佐费曼互动	xiang zuo fei man hu dong
@@ -5439,6 +5446,7 @@ use_preset_vocabulary: true
 吴存荣	wu cun rong
 吴宇金牌	wu yu jin pai
 吴宜泽	wu yi ze
+吴宣仪情商	wu xuan yi qing shang
 吴宣仪演技	wu xuan yi yan ji
 吴宣仪直播	wu xuan yi zhi bo
 吴宣仪表达	wu xuan yi biao da
@@ -6394,6 +6402,7 @@ use_preset_vocabulary: true
 在吃席	zai chi xi
 在吃年夜饭	zai chi nian ye fan
 在哪过年呢	zai na guo nian ne
+在学了在学了	zai xue le zai xue le
 在家爆改老爸	zai jia bao gai lao ba
 在微博过寒假	zai wei bo guo han jia
 在成都举办	zai cheng du ju ban
@@ -6744,6 +6753,7 @@ use_preset_vocabulary: true
 大交易	da jiao yi
 大人中	da ren zhong
 大人桌	da ren zhuo
+大人糖	da ren tang
 大仓忠义当爸	da cang zhong yi dang ba
 大仓忠义结婚	da cang zhong yi jie hun
 大件儿	da jian er
@@ -7252,6 +7262,7 @@ use_preset_vocabulary: true
 奇风	qi feng
 奇马耶夫	qi ma ye fu
 奈丝公主	nai si gong zhu
+奈夫	nai fu
 奈奈生发簪	nai nai sheng fa zan
 奈娃	nai wa
 奈良鹿丸	nai liang lu wan
@@ -7559,6 +7570,7 @@ use_preset_vocabulary: true
 如鸢抢名字	ru yuan qiang ming zi
 如鸢攻略	ru yuan gong lve
 如鸢放我进去	ru yuan fang wo jin qu
+如鸢新密探	ru yuan xin mi tan
 如鸢暗号	ru yuan an hao
 如鸢预下载	ru yuan yu xia zai
 如鸢预约	ru yuan yu yue
@@ -7768,6 +7780,7 @@ use_preset_vocabulary: true
 孙伊涵	sun yi han
 孙佳俊	sun jia jun
 孙佳琪摔了	sun jia qi shuai le
+孙俪演技	sun li yan ji
 孙准浩	sun zhun hao
 孙千体面	sun qian ti mian
 孙千包场冬至	sun qian bao chang dong zhi
@@ -7819,6 +7832,7 @@ use_preset_vocabulary: true
 孙滢皓退赛	sun ying hao tui sai
 孙燕姿上海站	sun yan zi shang hai zhan
 孙燕姿抢票	sun yan zi qiang piao
+孙燕姿演唱会	sun yan zi yan chang hui
 孙红雷发言	sun hong lei fa yan
 孙美琪疑案	sun mei qi yi an
 孙莉跳舞	sun li tiao wu
@@ -10191,6 +10205,7 @@ use_preset_vocabulary: true
 心理安全舱	xin li an quan cang
 心理督导	xin li du dao
 心疼东玄	xin teng dong xuan
+心疼卡琳娜	xin teng ka lin na
 心疼卫昭	xin teng wei zhao
 心疼大黄蜂	xin teng dai huang feng
 心疼妖刀	xin teng yao dao
@@ -10998,6 +11013,7 @@ use_preset_vocabulary: true
 房屋养老金	fang wu yang lao jin
 房琪初舞台	fang qi chu wu tai
 房琪情商	fang qi qing shang
+房琪文案	fang qi wen an
 房贷利率触底	fang dai li lv chu di
 所得即所愿	suo de ji suo yuan
 所得皆所愿	suo de jie suo yuan
@@ -11136,6 +11152,7 @@ use_preset_vocabulary: true
 抄袭没有未来	chao xi mei you wei lai
 把乐带回家	ba le dai hui jia
 把健康带回家	ba jian kang dai hui jia
+把废话剪掉	ba fei hua jian diao
 把把壶	ba ba hu
 把把胡	ba ba hu
 把昨天忘掉	ba zuo tian wang diao
@@ -11521,6 +11538,7 @@ use_preset_vocabulary: true
 捷捷微电	jie jie wei dian
 捷风	jie feng
 掉人民币	diao ren min bi
+掉代言	diao dai yan
 掉木	diao mu
 掉杆	diao gan
 掉杠	diao gang
@@ -14076,6 +14094,7 @@ use_preset_vocabulary: true
 柳演锡演技	liu yan xi yan ji
 柳眠棠	liu mian tang
 柳眠棠掉马	liu mian tang diao ma
+柳絮来了	liu xu lai le
 柳舟记	liu zhou ji
 柳舟记反转	liu zhou ji fan zhuan
 柳舟记大结局	liu zhou ji da jie ju
@@ -16289,6 +16308,7 @@ use_preset_vocabulary: true
 牌皇	pai huang
 牌阵	pai zhen
 牙仙	ya xian
+牙医的浪漫	ya yi de lang man
 牙牙张程	ya ya zhang cheng
 牛会哞马会叫	niu hui mou ma hui jiao
 牛哇	niu wa
@@ -17054,6 +17074,7 @@ use_preset_vocabulary: true
 生万物过审	sheng wan wu guo shen
 生于华夏	sheng yu hua xia
 生化母体	sheng hua mu ti
+生命从夜中醒来	sheng ming cong ye zhong xing lai
 生命律动	sheng ming lv dong
 生咖	sheng ka
 生在红旗下	sheng zai hong qi xia
@@ -17280,6 +17301,7 @@ use_preset_vocabulary: true
 男明星流量大	nan ming xing liu liang da
 男朋友的衣柜	nan peng you de yi gui
 男模走秀	nan mo zou xiu
+男版纯元	nan ban chun yuan
 男生向往的生活	nan sheng xiang wang de sheng huo
 男生校内坠亡	nan sheng xiao nei zhui wang
 男生的交友速度	nan sheng de jiao you su du
@@ -18926,6 +18948,7 @@ use_preset_vocabulary: true
 纯阳盒子	chun yang he zi
 纳塔鲨	na ta sha
 纳布啡	na bu fei
+纳指进入熊市	na zhi jin ru xiong shi
 纳斯鲁拉	na si lu la
 纳米发电机之父	na mi fa dian ji zhi fu
 纳纳塞	na na sai
@@ -19878,6 +19901,7 @@ use_preset_vocabulary: true
 航丝	hang si
 航天人	hang tian ren
 航平	hang ping
+航海王复播	hang hai wang fu bo
 航班全停飞	hang ban quan ting fei
 航班起飞	hang ban qi fei
 航禹	hang yu
@@ -20039,6 +20063,7 @@ use_preset_vocabulary: true
 苍史诗皮肤	cang shi shi pi fu
 苍角	cang jiao
 苏不拉几	su bu la ji
+苏丹的游戏	su dan de you xi
 苏伟德	su wei de
 苏全孝下雪了	su quan xiao xia xue le
 苏可杨洋二胎	su ke yang yang er tai
@@ -21934,6 +21959,7 @@ use_preset_vocabulary: true
 跳马失误	tiao ma shi wu
 跳马难度	tiao ma nan du
 跳高加赛	tiao gao jia sai
+跺脚变装	duo jiao bian zhuang
 跺脚变装挑战	duo jiao bian zhuang tiao zhan
 踏实稳重	ta shi wen zhong
 踏山河	ta shan he
@@ -22600,6 +22626,7 @@ use_preset_vocabulary: true
 邓亚萍来了	deng ya ping lai le
 邓亚萍谈男单	deng ya ping tan nan dan
 邓佳鑫全开麦	deng jia xin quan kai mai
+邓佳鑫大屏	deng jia xin da ping
 邓佳鑫小卡	deng jia xin xiao ka
 邓佳鑫直播	deng jia xin zhi bo
 邓利维	deng li wei
@@ -22952,6 +22979,7 @@ use_preset_vocabulary: true
 金价跳水	jin jia tiao shui
 金价跳水了	jin jia tiao shui le
 金价跳水原因	jin jia tiao shui yuan yin
+金价连续跳水	jin jia lian xu tiao shui
 金价高位回落	jin jia gao wei hui luo
 金俊勉哭了	jin jun mian ku le
 金元浩	jin yuan hao
@@ -24103,6 +24131,7 @@ use_preset_vocabulary: true
 鞠婧祎杂志	ju jing yi za zhi
 鞠婧祎田嘉瑞	ju jing yi tian jia rui
 鞠婧祎红昭愿	ju jing yi hong zhao yuan
+鞠婧祎罗云熙	ju jing yi luo yun xi
 鞠婧祎脏脏裤	ju jing yi zang zang ku
 鞠婧祎营业	ju jing yi ying ye
 鞠婧祎逆应援	ju jing yi ni ying yuan
