@@ -16,7 +16,7 @@
 #
 ---
 name: luna_pinyin.sogoupopular
-version: "2025.05.09"
+version: "2025.05.10"
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -25,6 +25,7 @@ use_preset_vocabulary: true
 一万元舞台	yi wan yuan wu tai
 一万台	yi wan tai
 一万种春天	yi wan zhong chun tian
+一世喜乐	yi shi xi le
 一个十连	yi ge shi lian
 一个小品	yi ge xiao pin
 一个抢不到	yi ge qiang bu dao
@@ -34,6 +35,7 @@ use_preset_vocabulary: true
 一个镜头封神	yi ge jing tou feng shen
 一串儿	yi chuan er
 一之窟	yi zhi ku
+一二零七	yi er ling qi
 一人公司化	yi ren gong si hua
 一人食热饮	yi ren shi re yin
 一代人师严修	yi dai ren shi yan xiu
@@ -229,6 +231,7 @@ use_preset_vocabulary: true
 丁格尔	ding ge er
 丁海寅翻栏杆	ding hai yin fan lan gan
 丁真	ding zhen
+丁真生日直播	ding zhen sheng ri zhi bo
 丁禹兮上桌	ding yu xi shang zhuo
 丁禹兮不敢吻	ding yu xi bu gan wen
 丁禹兮主持	ding yu xi zhu chi
@@ -245,6 +248,7 @@ use_preset_vocabulary: true
 丁禹兮哭戏	ding yu xi ku xi
 丁禹兮壁纸	ding yu xi bi zhi
 丁禹兮好会哭	ding yu xi hao hui ku
+丁禹兮孟子义	ding yu xi meng zi yi
 丁禹兮寸头	ding yu xi cun tou
 丁禹兮少年音	ding yu xi shao nian yin
 丁禹兮工作室	ding yu xi gong zuo shi
@@ -303,6 +307,7 @@ use_preset_vocabulary: true
 七人团	qi ren tuan
 七休	qi xiu
 七休日	qi xiu ri
+七分靠打拼	qi fen kao da pin
 七十而从心所欲	qi shi er cong xin suo yu
 七升八	qi sheng ba
 七号了	qi hao le
@@ -339,6 +344,7 @@ use_preset_vocabulary: true
 七月再见	qi yue zai jian
 七月骄阳	qi yue jiao yang
 七样菜	qi yang cai
+七根心简	qi gen xin jian
 七根心简下证	qi gen xin jian xia zheng
 七等奖	qi deng jiang
 七级包	qi ji bao
@@ -685,6 +691,7 @@ use_preset_vocabulary: true
 不吃年夜饭	bu chi nian ye fan
 不吃谷	bu chi gu
 不嘻嘻	bu xi xi
+不回归	bu hui gui
 不回档	bu hui dang
 不处哈	bu chu ha
 不复拍	bu fu pai
@@ -846,6 +853,7 @@ use_preset_vocabulary: true
 世界之外西幻	shi jie zhi wai xi huan
 世界友	shi jie you
 世界反法西斯战争	shi jie fan fa xi si zhan zheng
+世界和平万岁	shi jie he ping wan sui
 世界唯一	shi jie wei yi
 世界围棋	shi jie wei qi
 世界围棋九冠王	shi jie wei qi jiu guan wang
@@ -924,6 +932,7 @@ use_preset_vocabulary: true
 东迪	dong di
 东道主更吵了	dong dao zhu geng chao le
 东郊到家	dong jiao dao jia
+东部变天了	dong bu bian tian le
 东部战区锁控	dong bu zhan qu suo kong
 东部马脑炎	dong bu ma nao yan
 东锲奇	dong qie qi
@@ -939,6 +948,7 @@ use_preset_vocabulary: true
 丞磊待播剧	cheng lei dai bo ju
 丞磊方取证	cheng lei fang qu zheng
 丞磊王楚然	cheng lei wang chu ran
+丞磊画画	cheng lei hua hua
 丞磊的红包	cheng lei de hong bao
 丞磊身材	cheng lei shen cai
 丢那猩	diu na xing
@@ -980,6 +990,7 @@ use_preset_vocabulary: true
 严浩翔断眉	yan hao xiang duan mei
 严浩翔新歌	yan hao xiang xin ge
 严浩翔昼夜	yan hao xiang zhou ye
+严浩翔燕尾服	yan hao xiang yan wei fu
 严浩翔直播	yan hao xiang zhi bo
 严浩翔红发	yan hao xiang hong fa
 严浩翔贺峻霖	yan hao xiang he jun lin
@@ -1012,7 +1023,9 @@ use_preset_vocabulary: true
 中产收割机	zhong chan shou ge ji
 中使馆提醒	zhong shi guan ti xing
 中俄军演	zhong e jun yan
+中俄友谊万岁	zhong e you yi wan sui
 中俄永不为敌	zhong e yong bu wei di
+中俄联合声明	zhong e lian he sheng ming
 中信海直	zhong xin hai zhi
 中元节习俗	zhong yuan jie xi su
 中元节快乐	zhong yuan jie kuai le
@@ -1041,7 +1054,9 @@ use_preset_vocabulary: true
 中国企业家杂志	zhong guo qi ye jia za zhi
 中国体操	zhong guo ti cao
 中国体育杂志	zhong guo ti yu za zhi
+中国军工	zhong guo jun gong
 中国医师节	zhong guo yi shi jie
+中国医药指南	zhong guo yi yao zhi nan
 中国历史地图集	zhong guo li shi di tu ji
 中国台北	zhong guo tai bei
 中国围棋协会	zhong guo wei qi xie hui
@@ -1275,6 +1290,7 @@ use_preset_vocabulary: true
 为比赛	wei bi sai
 为热爱	wei re ai
 为爱冲破枷锁	wei ai chong po jia suo
+为考生加油	wei kao sheng jia you
 为自己闪耀	wei zi ji shan yao
 为蟑螂正名	wei zhang lang zheng ming
 为西藏加油	wei xi zang jia you
@@ -1417,6 +1433,7 @@ use_preset_vocabulary: true
 乔苓	qiao ling
 乖萌萌	guai meng meng
 乘区	cheng qu
+乘风四公大片	cheng feng si gong da pian
 乙姐	yi jie
 乙小妹	yi xiao mei
 乙巳	yi si
@@ -1449,6 +1466,7 @@ use_preset_vocabulary: true
 九尾煮的汤圆	jiu wei zhu de tang yuan
 九尾的弈星	jiu wei de yi xing
 九尾蓝发	jiu wei lan fa
+九尾要当干爹	jiu wei yao dang gan die
 九尾辟谣	jiu wei pi yao
 九尾长胖了	jiu wei zhang pang le
 九尾除夕开播	jiu wei chu xi kai bo
@@ -1593,6 +1611,7 @@ use_preset_vocabulary: true
 事业高升	shi ye gao sheng
 事事圆	shi shi yuan
 事事圆满	shi shi yuan man
+事事留痕	shi shi liu hen
 事事胜意	shi shi sheng yi
 事事顺心如意	shi shi shun xin ru yi
 二两母	er liang mu
@@ -1628,6 +1647,7 @@ use_preset_vocabulary: true
 二月新规来了	er yue xin gui lai le
 二月最后一天	er yue zui hou yi tian
 二本海默	er ben hai mo
+二次预约	er ci yu yue
 二游	er you
 二番战	er fan zhan
 二箱	er xiang
@@ -1665,6 +1685,7 @@ use_preset_vocabulary: true
 于正发了晴川	yu zheng fa le qing chuan
 于正报警	yu zheng bao jing
 于正换角	yu zheng huan jiao
+于正撕拉片	yu zheng si la pian
 于正白鹿合照	yu zheng bai lu he zhao
 于正的发文	yu zheng de fa wen
 于正老粉	yu zheng lao fen
@@ -1711,6 +1732,7 @@ use_preset_vocabulary: true
 云南震感	yun nan zhen gan
 云原神	yun yuan shen
 云合	yun he
+云圣智能	yun sheng zhi neng
 云堇	yun jin
 云壤	yun rang
 云姝	yun shu
@@ -1744,6 +1766,7 @@ use_preset_vocabulary: true
 互换礼物	hu huan li wu
 互相嫁互相娶	hu xiang jia hu xiang qu
 互赏	hu shang
+互通了	hu tong le
 五一上班	wu yi shang ban
 五一作业	wu yi zuo ye
 五一出去	wu yi chu qu
@@ -1754,6 +1777,7 @@ use_preset_vocabulary: true
 五一劳动节快乐	wu yi lao dong jie kuai le
 五一反向旅游	wu yi fan xiang lv you
 五一啦	wu yi la
+五一围攻光明顶	wu yi wei gong guang ming ding
 五一寻味记	wu yi xun wei ji
 五一当天	wu yi dang tian
 五一快乐呀	wu yi kuai le ya
@@ -1798,6 +1822,7 @@ use_preset_vocabulary: true
 五星上将	wu xing shang jiang
 五星闪耀	wu xing shan yao
 五月天上海	wu yue tian shang hai
+五月天哈尔滨	wu yue tian ha er bin
 五月天太原站	wu yue tian tai yuan zhan
 五月天成军日	wu yue tian cheng jun ri
 五月天成都	wu yue tian cheng du
@@ -1940,6 +1965,7 @@ use_preset_vocabulary: true
 亲子车厢	qin zi che xiang
 亲情线	qin qing xian
 亲戚询问年终奖	qin qi xun wen nian zhong jiang
+亲爱的仇敌	qin ai de chou di
 亲爱的你啊	qin ai de ni a
 亲爱的女孩	qin ai de nv hai
 亲爱的妍珍	qin ai de yan zhen
@@ -1973,6 +1999,7 @@ use_preset_vocabulary: true
 人抬剧	ren tai ju
 人教人	ren jiao ren
 人文之美	ren wen zhi mei
+人无癖不可交	ren wu pi bu ke jiao
 人是	ren shi
 人月两团圆	ren yue liang tuan yuan
 人机人机	ren ji ren ji
@@ -2279,6 +2306,7 @@ use_preset_vocabulary: true
 任天不再	ren tian bu zai
 任天堂新游戏	ren tian tang xin you xi
 任天堂闹钟	ren tian tang nao zhong
+任少白	ren shao bai
 任彬演技	ren bin yan ji
 任志达	ren zhi da
 任敏原声台词	ren min yuan sheng tai ci
@@ -2915,6 +2943,7 @@ use_preset_vocabulary: true
 倪妮好美	ni ni hao mei
 倪妮红裙生图	ni ni hong qun sheng tu
 倪萍蔡明	ni ping cai ming
+倪虹洁侯佩岑	ni hong jie hou pei cen
 倪虹洁吴宣仪	ni hong jie wu xuan yi
 倪虹洁大漏勺	ni hong jie da lou shao
 倪阿姨	ni a yi
@@ -3176,6 +3205,7 @@ use_preset_vocabulary: true
 克苟	ke gou
 克莱因蓝	ke lai yin lan
 克莱文	ke lai wen
+克里西	ke li xi
 克鲁斯堡	ke lu si bao
 免五	mian wu
 免六	mian liu
@@ -3262,6 +3292,7 @@ use_preset_vocabulary: true
 全拉满	quan la man
 全斗焕	quan dou huan
 全新出装	quan xin chu zhuang
+全日制单身	quan ri zhi dan shen
 全是外国人	quan shi wai guo ren
 全是忙钱	quan shi mang qian
 全是情绪	quan shi qing xu
@@ -3442,6 +3473,8 @@ use_preset_vocabulary: true
 兰蔻红毯美学	lan kou hong tan mei xue
 兰那罗	lan na luo
 兰香如故	lan xiang ru gu
+兰香如故官宣	lan xiang ru gu guan xuan
+兰香如故开机	lan xiang ru gu kai ji
 兰马	lan ma
 共促	gong cu
 共创之夜	gong chuang zhi ye
@@ -3853,6 +3886,7 @@ use_preset_vocabulary: true
 凭栏处	ping lan chu
 凯恩大四喜	kai en da si xi
 凯恩帽子戏法	kai en mao zi xi fa
+凯撒计划	kai sa ji hua
 凯美	kai mei
 凯茜娅	kai qian ya
 凯豹	kai bao
@@ -3950,6 +3984,7 @@ use_preset_vocabulary: true
 刘亦菲衣服	liu yi fei yi fu
 刘亦菲骑白马	liu yi fei qi bai ma
 刘亦菲骨相	liu yi fei gu xiang
+刘令姿主演	liu ling zi zhu yan
 刘令姿演技	liu ling zi yan ji
 刘佳梁	liu jia liang
 刘光耀	liu guang yao
@@ -3957,6 +3992,7 @@ use_preset_vocabulary: true
 刘冠佑	liu guan you
 刘冲直播	liu chong zhi bo
 刘冲直播间	liu chong zhi bo jian
+刘嘉玲状态	liu jia ling zhuang tai
 刘回	liu hui
 刘国栋教练	liu guo dong jiao lian
 刘国梁卸任	liu guo liang xie ren
@@ -4097,6 +4133,7 @@ use_preset_vocabulary: true
 刘诗诗仪态	liu shi shi yi tai
 刘诗诗台词	liu shi shi tai ci
 刘诗诗打戏	liu shi shi da xi
+刘诗诗插花	liu shi shi cha hua
 刘诗诗新剧	liu shi shi xin ju
 刘诗诗演技	liu shi shi yan ji
 刘诗诗生活感	liu shi shi sheng huo gan
@@ -4277,6 +4314,7 @@ use_preset_vocabulary: true
 刷酸那回事儿	shua suan na hui shi er
 券商板块爆发	quan shang ban kuai bao fa
 刹停	sha ting
+刺五加注射液	ci wu jia zhu she ye
 刺客信条影	ci ke xin tiao ying
 刺激版	ci ji ban
 刺灰	ci hui
@@ -4309,6 +4347,7 @@ use_preset_vocabulary: true
 前程螣螣	qian cheng te te
 前经纪人	qian jing ji ren
 前翼	qian yi
+前行必有曙光	qian xing bi you shu guang
 前途无量定档	qian tu wu liang ding dang
 剑啸灵霄	jian xiao ling xiao
 剑妈	jian ma
@@ -4910,6 +4949,7 @@ use_preset_vocabulary: true
 南瓜王	nan gua wang
 南芜双狗	nan wu shuang gou
 南蚌	nan bang
+南部战区发声	nan bu zhan qu fa sheng
 南部档案	nan bu dang an
 南部档案官宣	nan bu dang an guan xuan
 南部档案开机	nan bu dang an kai ji
@@ -4954,6 +4994,7 @@ use_preset_vocabulary: true
 卡拉米	ka la mi
 卡拉马佐夫兄弟	ka la ma zuo fu xiong di
 卡摸	ka mo
+卡林卡	ka lin ka
 卡梦	ka meng
 卡比兽醒了	ka bi shou xing le
 卡比龙	ka bi long
@@ -5026,7 +5067,12 @@ use_preset_vocabulary: true
 印尼小组垫底	yin ni xiao zu dian di
 印尼扳回一球	yin ni ban hui yi qiu
 印尼队	yin ni dui
+印巴冲突	yin ba chong tu
+印巴实时画面	yin ba shi shi hua mian
+印巴开始交火	yin ba kai shi jiao huo
+印巴最新局势	yin ba zui xin ju shi
 印度女医生	yin du nv yi sheng
+印度开闸放水	yin du kai zha fang shui
 印度敬蛇节	yin du jing she jie
 印度行	yin du xing
 印花集	yin hua ji
@@ -6070,6 +6116,7 @@ use_preset_vocabulary: true
 周琦复出	zhou qi fu chu
 周琦手感	zhou qi shou gan
 周琦赛季首秀	zhou qi sai ji shou xiu
+周琦连续盖帽	zhou qi lian xu gai mao
 周生如故	zhou sheng ru gu
 周生辰	zhou sheng chen
 周笔畅修音响	zhou bi chang xiu yin xiang
@@ -6525,6 +6572,7 @@ use_preset_vocabulary: true
 四强我来了	si qiang wo lai le
 四战	si zhan
 四抓	si zhua
+四搭	si da
 四斋	si zhai
 四方馆	si fang guan
 四方馆开播	si fang guan kai bo
@@ -6762,6 +6810,7 @@ use_preset_vocabulary: true
 国考缴费	guo kao jiao fei
 国考考点	guo kao kao dian
 国考行测	guo kao xing ce
+国考补录	guo kao bu lu
 国考裸考	guo kao luo kao
 国考言语缩减	guo kao yan yu suo jian
 国考进面名单	guo kao jin mian ming dan
@@ -6854,6 +6903,7 @@ use_preset_vocabulary: true
 圈米	quan mi
 圈速	quan su
 圌山	chuan shan
+土台风	tu tai feng
 土土的	tu tu de
 土坡上的狗尾草	tu po shang de gou wei cao
 土松	tu song
@@ -7024,6 +7074,7 @@ use_preset_vocabulary: true
 埃文凯尔	ai wen kai er
 埃文凯尔回国	ai wen kai er hui guo
 埃斯特雷	ai si te lei
+埋头努力到凌晨	mai tou nu li dao ling chen
 埋头苦干实干	mai tou ku gan shi gan
 埋尸案	mai shi an
 城乡融合	cheng xiang rong he
@@ -7054,6 +7105,7 @@ use_preset_vocabulary: true
 塑水	su shui
 塑水宗	su shui zong
 塑灵	su ling
+塔利雅	ta li ya
 塔图姆受伤	ta tu mu shou shang
 塔图姆绝杀	ta tu mu jue sha
 塔塔开	ta ta kai
@@ -7162,6 +7214,7 @@ use_preset_vocabulary: true
 夏日记忆	xia ri ji yi
 夏日青提妆	xia ri qing ti zhuang
 夏梦好美	xia meng hao mei
+夏梦玫珑	xia meng mei long
 夏沃蕾	xia wo lei
 夏油杰	xia you jie
 夏知许	xia zhi xu
@@ -7240,6 +7293,7 @@ use_preset_vocabulary: true
 多邻国闪退	duo lin guo shan tui
 多里安	duo li an
 多重施法	duo zhong shi fa
+多阔霍	duo kuo huo
 夜之城	ye zhi cheng
 夜光藻	ye guang zao
 夜兰	ye lan
@@ -7451,6 +7505,7 @@ use_preset_vocabulary: true
 大理掼蛋	da li guan dan
 大理第一场雪	da li di yi chang xue
 大生意人预告	da sheng yi ren yu gao
+大男主剧海报	da nan zhu ju hai bao
 大画王	da hua wang
 大疆效果	da jiang xiao guo
 大疆水印	da jiang shui yin
@@ -7739,6 +7794,7 @@ use_preset_vocabulary: true
 央视新闻铁粉	yang shi xin wen tie fen
 央视没版权	yang shi mei ban quan
 央视片单	yang shi pian dan
+央视网文娱	yang shi wang wen yu
 央视蛇年春晚	yang shi she nian chun wan
 央视跨年	yang shi kua nian
 央视重阳晚会	yang shi chong yang wan hui
@@ -7999,16 +8055,19 @@ use_preset_vocabulary: true
 奶爱	nai ai
 奶皮子酸奶	nai pi zi suan nai
 奶茶免单	nai cha mian dan
+奶茶社交	nai cha she jiao
 奶药	nai yao
 奶香四溢	nai xiang si yi
 奶麻薯	nai ma shu
 她们尽情闪耀	ta men jin qing shan yao
 她叫杨妞花	ta jiao yang niu hua
 她在闹他在笑	ta zai nao ta zai xiao
+她想你了	ta xiang ni le
 她手欠的没边	ta shou qian de mei bian
 她拍的	ta pai de
 她捂着眼睛笑	ta wu zhuo yan jing xiao
 她的无限可能	ta de wu xian ke neng
+她的瞳	ta de tong
 她的色彩	ta de se cai
 她的轨迹开播	ta de gui ji kai bo
 她研社	ta yan she
@@ -8325,6 +8384,7 @@ use_preset_vocabulary: true
 嫂嫂开门	sao sao kai men
 嫌犯已归案	xian fan yi gui an
 嫌疑人挑战	xian yi ren tiao zhan
+嫌疑人赛道	xian yi ren sai dao
 嫑忈嘦姕	bao ren jiao zi
 嫚熙再回应	man xi zai hui ying
 嫚熙致歉	man xi zhi qian
@@ -8447,6 +8507,7 @@ use_preset_vocabulary: true
 孙颖莎周边	sun ying sha zhou bian
 孙颖莎哭了	sun ying sha ku le
 孙颖莎喝水	sun ying sha he shui
+孙颖莎嘉人	sun ying sha jia ren
 孙颖莎回国	sun ying sha hui guo
 孙颖莎坐索道	sun ying sha zuo suo dao
 孙颖莎好稳	sun ying sha hao wen
@@ -8561,6 +8622,7 @@ use_preset_vocabulary: true
 宁红夜	ning hong ye
 宁艺卓	ning yi zhuo
 宁艺卓大波浪	ning yi zhuo da bo lang
+宁艺卓橘发	ning yi zhuo ju fa
 宁艺卓毛毛领	ning yi zhuo mao mao ling
 宁艺卓美宝莲	ning yi zhuo mei bao lian
 宁艺卓高洁丝	ning yi zhuo gao jie si
@@ -9177,6 +9239,7 @@ use_preset_vocabulary: true
 小明剑魔回应	xiao ming jian mo hui ying
 小明妈妈	xiao ming ma ma
 小月卡	xiao yue ka
+小杜林	xiao du lin
 小杨哥哭了	xiao yang ge ku le
 小杨哥小杨嫂	xiao yang ge xiao yang sao
 小杨哥掉粉	xiao yang ge diao fen
@@ -9280,6 +9343,7 @@ use_preset_vocabulary: true
 小英老公出轨	xiao ying lao gong chu gui
 小茅	xiao mao
 小草神	xiao cao shen
+小药瓶	xiao yao ping
 小荷包	xiao he bao
 小莫心态	xiao mo xin tai
 小莫有点实力	xiao mo you dian shi li
@@ -9610,6 +9674,7 @@ use_preset_vocabulary: true
 崔胜澈好帅	cui sheng che hao shuai
 崔胜澈直播	cui sheng che zhi bo
 崔胜澈自拍	cui sheng che zi pai
+崔胜澈预告照	cui sheng che yu gao zhao
 崔行舟	cui xing zhou
 崔行舟吃醋	cui xing zhou chi cu
 崩卡	beng ka
@@ -9786,6 +9851,7 @@ use_preset_vocabulary: true
 巴西国歌	ba xi guo ge
 巴西坠机	ba xi zhui ji
 巴郎仔	ba lang zai
+巴里克	ba li ke
 巴铁女孩	ba tie nv hai
 巴黎不说再见	ba li bu shuo zai jian
 巴黎假日	ba li jia ri
@@ -9946,6 +10012,7 @@ use_preset_vocabulary: true
 平次和叶	ping ci he ye
 平次表白	ping ci biao bai
 平淡的幸福	ping dan de xing fu
+平番排序方式	ping fan pai xu fang shi
 平等关系	ping deng guan xi
 平行服	ping xing fu
 平衡木冠军	ping heng mu guan jun
@@ -10071,6 +10138,7 @@ use_preset_vocabulary: true
 广仁寺	guang ren si
 广博股份	guang bo gu fen
 广和通	guang he tong
+广场协议	guang chang xie yi
 广子	guang zi
 广岛志恋	guang dao zhi lian
 广州冻到结冰	guang zhou dong dao jie bing
@@ -10144,6 +10212,7 @@ use_preset_vocabulary: true
 库里脑后传球	ku li nao hou chuan qiu
 库里被吹挑衅	ku li bei chui tiao xin
 库里谈论退役	ku li tan lun tui yi
+库里退出比赛	ku li tui chu bi sai
 库里防约老师	ku li fang yue lao shi
 库里隐身	ku li yin shen
 应休未休	ying xiu wei xiu
@@ -10218,6 +10287,7 @@ use_preset_vocabulary: true
 开学有点东西	kai xue you dian dong xi
 开学福利日	kai xue fu li ri
 开学穿搭大赏	kai xue chuan da da shang
+开封文旅	kai feng wen lv
 开局不利	kai ju bu li
 开局五子棋	kai ju wu zi qi
 开局如有神	kai ju ru you shen
@@ -10509,6 +10579,7 @@ use_preset_vocabulary: true
 张杰备战	zhang jie bei zhan
 张杰好会浪漫	zhang jie hao hui lang man
 张杰广西	zhang jie guang xi
+张杰悼念苟伟	zhang jie dao nian gou wei
 张杰感谢李现	zhang jie gan xie li xian
 张杰成都	zhang jie cheng du
 张杰成都抢票	zhang jie cheng du qiang piao
@@ -10931,6 +11002,7 @@ use_preset_vocabulary: true
 德国大选	de guo da xuan
 德国政府解散	de guo zheng fu jie san
 德基厕所	de ji ce suo
+德子土	de zi tu
 德尔加多	de er jia duo
 德州巴黎	de zhou ba li
 德总理被解职	de zong li bei jie zhi
@@ -10968,6 +11040,7 @@ use_preset_vocabulary: true
 心暖暖	xin nuan nuan
 心机之蛙	xin ji zhi wa
 心桥	xin qiao
+心测	xin ce
 心源性猝死	xin yuan xing cu si
 心灵之蛋	xin ling zhi dan
 心灵食谱	xin ling shi pu
@@ -11098,6 +11171,7 @@ use_preset_vocabulary: true
 怎样预防近视	zen yang yu fang jin shi
 怒水西流	nu shui xi liu
 怒水西流定档	nu shui xi liu ding dang
+怒火营救	nu huo ying jiu
 怒而飞	nu er fei
 怒鸟	nu niao
 怕一个人孤单	pa yi ge ren gu dan
@@ -11293,6 +11367,7 @@ use_preset_vocabulary: true
 惠英红马丽	hui ying hong ma li
 惠英绿	hui ying lv
 惠蒙保	hui meng bao
+惠蓉保	hui rong bao
 惠购湖北	hui gou hu bei
 惠闽宝	hui min bao
 惩治蝇贪蚁腐	cheng zhi ying tan yi fu
@@ -11652,6 +11727,7 @@ use_preset_vocabulary: true
 我是唐嫣的兵	wo shi tang yan de bing
 我是奶龙	wo shi nai long
 我是广陵王	wo shi guang ling wang
+我是张纪中	wo shi zhang ji zhong
 我是武则天	wo shi wu ze tian
 我是王总舞粉	wo shi wang zong wu fen
 我是白敬亭	wo shi bai jing ting
@@ -11731,6 +11807,7 @@ use_preset_vocabulary: true
 我的爱没前奏	wo de ai mei qian zou
 我的玉墨	wo de yu mo
 我的电子榨菜	wo de dian zi zha cai
+我的社交能力	wo de she jiao neng li
 我的笨蛋外婆	wo de ben dan wai po
 我的篮球记忆	wo de lan qiu ji yi
 我的紫在哪	wo de zi zai na
@@ -11964,6 +12041,7 @@ use_preset_vocabulary: true
 托育园	tuo yu yuan
 扣地	kou di
 执法卷	zhi fa juan
+执法者们	zhi fa zhe men
 执行力超强	zhi xing li chao qiang
 执行法官	zhi xing fa guan
 扩列被要钱了	kuo lie bei yao qian le
@@ -12173,6 +12251,7 @@ use_preset_vocabulary: true
 拇指城	mu zhi cheng
 拉乌	la wu
 拉克什亚	la ke shen ya
+拉合尔	la he er
 拉吊	la diao
 拉塔恩	la ta en
 拉夏贝尔退市	la xia bei er tui shi
@@ -12556,6 +12635,7 @@ use_preset_vocabulary: true
 搬碳	ban tan
 搬花	ban hua
 搭了个	da le ge
+搭子文化	da zi wen hua
 携礼	xie li
 携程优先购	xie cheng you xian gou
 摄影作品版权	she ying zuo pin ban quan
@@ -13045,6 +13125,7 @@ use_preset_vocabulary: true
 新成员追加	xin cheng yuan zhui jia
 新战机	xin zhan ji
 新手保护期	xin shou bao hu qi
+新教皇	xin jiao huang
 新日卡	xin ri ka
 新时代好少年	xin shi dai hao shao nian
 新易盛	xin yi sheng
@@ -13390,6 +13471,7 @@ use_preset_vocabulary: true
 早期黄圣依	zao qi huang sheng yi
 早柚	zao you
 早点收收心	zao dian shou shou xin
+早点趣派对	zao dian qu pai dui
 早点退休	zao dian tui xiu
 早田	zao tian
 早田希娜	zao tian xi na
@@ -13823,6 +13905,7 @@ use_preset_vocabulary: true
 普通犯规	pu tong fan gui
 普通的自恋	pu tong de zi lian
 普通计划	pu tong ji hua
+普通话一甲	pu tong hua yi jia
 景元元	jing yuan yuan
 景区智商果	jing qu zhi shang guo
 景嘉微	jing jia wei
@@ -13879,6 +13962,7 @@ use_preset_vocabulary: true
 暖胎圈	nuan tai quan
 暖雪	nuan xue
 暗区突围	an qu tu wei
+暗区突围无限	an qu tu wei wu xian
 暗喻幻想	an yu huan xiang
 暗壳科技	an ke ke ji
 暗夜与黎明	an ye yu li ming
@@ -14074,6 +14158,7 @@ use_preset_vocabulary: true
 月亮模式	yue liang mo shi
 月亮爬上来	yue liang pa shang lai
 月亮邮局	yue liang you ju
+月兆	yue zhao
 月光变奏曲	yue guang bian zou qu
 月半猫	yue ban mao
 月圆人圆	yue yuan ren yuan
@@ -14927,6 +15012,7 @@ use_preset_vocabulary: true
 杨迪请吃饭了	yang di qing chi fan le
 杨采钰怀孕	yang cai yu huai yun
 杨长岭	yang zhang ling
+杨鸣太有梗了	yang ming tai you geng le
 杨鸣好帅	yang ming hao shuai
 杨鸣愁死了	yang ming chou si le
 杨鸣暴怒	yang ming bao nu
@@ -15239,6 +15325,7 @@ use_preset_vocabulary: true
 核原则	he yuan ze
 核废水	he fei shui
 核心优势	he xin you shi
+核心挑战	he xin tiao zhan
 核心收紧	he xin shou jin
 核战略	he zhan lve
 核政策	he zheng ce
@@ -15263,6 +15350,7 @@ use_preset_vocabulary: true
 格教练	ge jiao lian
 格林受伤	ge lin shou shang
 格林放倒格林	ge lin fang dao ge lin
+格林放倒里德	ge lin fang dao li de
 格桑花开	ge sang hua kai
 格源新材料	ge yuan xin cai liao
 格瑞维亚	ge rui wei ya
@@ -15542,6 +15630,7 @@ use_preset_vocabulary: true
 樱桃琥珀官宣	ying tao hu po guan xuan
 樱桃琥珀杀青	ying tao hu po sha qing
 樱桃琥珀物料	ying tao hu po wu liao
+樱桃蛋挞	ying tao dan ta
 橘子果冻	ju zi guo dong
 橘子汽水妆	ju zi qi shui zhuang
 橘福福	ju fu fu
@@ -15642,6 +15731,7 @@ use_preset_vocabulary: true
 歌幂余孽	ge mi yu nie
 歌手后台遇害	ge shou hou tai yu hai
 歌手沈梦瑶	ge shou shen meng yao
+歌手苟伟去世	ge shou gou wei qu shi
 歌手首发阵容	ge shou shou fa zhen rong
 歌曲一点翻唱	ge qu yi dian fan chang
 歌曲劝学翻唱	ge qu quan xue fan chang
@@ -15881,6 +15971,7 @@ use_preset_vocabulary: true
 民用飞机	min yong fei ji
 民电	min dian
 民营企业家	min ying qi ye jia
+民营经济促进法	min ying jing ji cu jin fa
 民警救人牺牲	min jing jiu ren xi sheng
 民间格格	min jian ge ge
 气出肌瘤	qi chu ji liu
@@ -16040,6 +16131,7 @@ use_preset_vocabulary: true
 江辞	jiang ci
 汤加地震	tang jia di zhen
 汤唯南京	tang wei nan jing
+汤唯撕拉片	tang wei si la pian
 汤圆	tang yuan
 汤圆呀	tang yuan ya
 汤圆啦	tang yuan la
@@ -16052,6 +16144,7 @@ use_preset_vocabulary: true
 汪峰慌了	wang feng huang le
 汪峰车库抽烟	wang feng che ku chou yan
 汪嵩	wang song
+汪工	wang gong
 汪建民去世	wang jian min qu shi
 汪水	wang shui
 汪浚熙	wang jun xi
@@ -16080,6 +16173,7 @@ use_preset_vocabulary: true
 汽车拆解	qi che chai jie
 汽车摇摆舞	qi che yao bai wu
 沃克申请离队	wo ke shen qing li dui
+沃斯特	wo si te
 沅儿	yuan er
 沈大勇	shen da yong
 沈忠芳	shen zhong fang
@@ -16197,6 +16291,7 @@ use_preset_vocabulary: true
 没多大风	mei duo da feng
 没夺冠	mei duo guan
 没审	mei shen
+没带就是没写	mei dai jiu shi mei xie
 没抢找	mei qiang zhao
 没抱起来	mei bao qi lai
 没押中	mei ya zhong
@@ -16273,6 +16368,7 @@ use_preset_vocabulary: true
 河南春晚	he nan chun wan
 河南税务	he nan shui wu
 河头老街	he tou lao jie
+河套地区	he tao di qu
 河山锦绣	he shan jin xiu
 河村勇辉	he cun yong hui
 河村永辉	he cun yong hui
@@ -16324,6 +16420,7 @@ use_preset_vocabulary: true
 法强德	fa qiang de
 法拉米	fa la mi
 法拉赫	fa la he
+法比安世界波	fa bi an shi jie bo
 法治网	fa zhi wang
 法润彩云南	fa run cai yun nan
 法源寺	fa yuan si
@@ -16475,6 +16572,7 @@ use_preset_vocabulary: true
 活跃的春节	huo yue de chun jie
 派兵援俄是谣言	pai bing yuan e shi yao yan
 派出所长	pai chu suo zhang
+流俗地	liu su di
 流光引定档	liu guang yin ding dang
 流年之声	liu nian zhi sheng
 流式	liu shi
@@ -16700,6 +16798,7 @@ use_preset_vocabulary: true
 淘宝免单入口	tao bao mian dan ru kou
 淘宝奶茶免单	tao bao nai cha mian dan
 淘宝微信支付	tao bao wei xin zhi fu
+淘宝热搜	tao bao re sou
 淘宝答案	tao bao da an
 淘宝策划疯了	tao bao ce hua feng le
 淘宝送礼	tao bao song li
@@ -16718,6 +16817,7 @@ use_preset_vocabulary: true
 淮水竹亭开播	huai shui zhu ting kai bo
 淮水竹亭弹窗	huai shui zhu ting dan chuang
 淮水竹亭打戏	huai shui zhu ting da xi
+淮水竹亭扫楼	huai shui zhu ting sao lou
 淮水竹亭滤镜	huai shui zhu ting lv jing
 淮水竹亭热度	huai shui zhu ting re du
 淮水竹亭特效	huai shui zhu ting te xiao
@@ -16882,6 +16982,7 @@ use_preset_vocabulary: true
 港风小英	gang feng xiao ying
 渴望被父母认可	ke wang bei fu mu ren ke
 游击位	you ji wei
+游击队之歌	you ji dui zhi ge
 游学小记	you xue xiao ji
 游客发声	you ke fa sheng
 游影社	you ying she
@@ -16953,6 +17054,7 @@ use_preset_vocabulary: true
 湾区升明月	wan qu sheng ming yue
 湾里庙	wan li miao
 湿光	shi guang
+湿光了	shi guang le
 源力	yuan li
 源升智能	yuan sheng zhi neng
 源天生物	yuan tian sheng wu
@@ -17053,6 +17155,7 @@ use_preset_vocabulary: true
 漏音	lou yin
 演出顺利	yan chu shun li
 演反派	yan fan pai
+演员原声	yan yuan yuan sheng
 演员扛票房	yan yuan kang piao fang
 演员星星	yan yuan xing xing
 演员星星近照	yan yuan xing xing jin zhao
@@ -17235,6 +17338,7 @@ use_preset_vocabulary: true
 灵泉寺	ling quan si
 灵活博弈	ling huo bo yi
 灵犀互娱	ling xi hu yu
+灵犀相通	ling xi xiang tong
 灵珠版哪吒	ling zhu ban ne zha
 灵生科技	ling sheng ke ji
 灵砂	ling sha
@@ -17675,6 +17779,7 @@ use_preset_vocabulary: true
 特别贡献奖	te bie gong xian jiang
 特劳斯	te lao si
 特大地震	te da di zhen
+特大暴雨来了	te da bao yu lai le
 特大暴雪	te da bao xue
 特大杯	te da bei
 特大风	te da feng
@@ -17737,6 +17842,7 @@ use_preset_vocabulary: true
 狠狠幸福	hen hen xing fu
 狠狠拿捏	hen hen na nie
 狩猎笛	shou lie di
+独家配方	du jia pei fang
 独异于人	du yi yu ren
 独户	du hu
 独牙	du ya
@@ -17920,6 +18026,7 @@ use_preset_vocabulary: true
 王俊凯手速	wang jun kai shou su
 王俊凯演技	wang jun kai yan ji
 王俊凯生图	wang jun kai sheng tu
+王俊凯皮裤	wang jun kai pi ku
 王俊凯眼神戏	wang jun kai yan shen xi
 王俊凯薛之谦	wang jun kai xue zhi qian
 王俊凯重庆胃	wang jun kai chong qing wei
@@ -18447,6 +18554,7 @@ use_preset_vocabulary: true
 生活顺利	sheng huo shun li
 生物突击队	sheng wu tu ji dui
 生理性分手	sheng li xing fen shou
+生理性厌恶	sheng li xing yan wu
 生稀盐酸	sheng xi yan suan
 生者的地狱	sheng zhe de di yu
 生育友好岗	sheng yu you hao gang
@@ -18679,6 +18787,7 @@ use_preset_vocabulary: true
 画师年终	hua shi nian zhong
 画师年终总结	hua shi nian zhong zong jie
 画梅	hua mei
+画江湖之不良人	hua jiang hu zhi bu liang ren
 画蛇添福	hua she tian fu
 画蛊	hua gu
 画龙点睛之笔	hua long dian jing zhi bi
@@ -18767,6 +18876,7 @@ use_preset_vocabulary: true
 登神	deng shen
 登记的	deng ji de
 登陆少年	deng lu shao nian
+登陆少年人气	deng lu shao nian ren qi
 登陆少年出图	deng lu shao nian chu tu
 登陆少年分词	deng lu shao nian fen ci
 登陆少年发博	deng lu shao nian fa bo
@@ -18856,6 +18966,7 @@ use_preset_vocabulary: true
 白蛇浮生	bai she fu sheng
 白衣客	bai yi ke
 白衣居士	bai yi ju shi
+白衣缘生物	bai yi yuan sheng wu
 白费工夫	bai fei gong fu
 白起抱小猫	bai qi bao xiao mao
 白银城	bai yin cheng
@@ -18886,6 +18997,7 @@ use_preset_vocabulary: true
 白鹿哭戏	bai lu ku xi
 白鹿唐宫出妆	bai lu tang gong chu zhuang
 白鹿唱年轮	bai lu chang nian lun
+白鹿回老家了	bai lu hui lao jia le
 白鹿复古花伶	bai lu fu gu hua ling
 白鹿妆造	bai lu zhuang zao
 白鹿害羞了	bai lu hai xiu le
@@ -19011,6 +19123,7 @@ use_preset_vocabulary: true
 盐湖计划	yan hu ji hua
 盐都不盐了	yan dou bu yan le
 监工直播	jian gong zhi bo
+监测户	jian ce hu
 监督秀	jian du xiu
 监管人格	jian guan ren ge
 监管紧急提示	jian guan jin ji ti shi
@@ -19408,6 +19521,7 @@ use_preset_vocabulary: true
 碰一下陈哲远	peng yi xia chen zhe yuan
 碰出好运来	peng chu hao yun lai
 碰撞后	peng zhuang hou
+碰辞	peng ci
 碱水面包	jian shui mian bao
 碳尼	tan ni
 碳链强聚集	tan lian qiang ju ji
@@ -19439,6 +19553,7 @@ use_preset_vocabulary: true
 社交降级	she jiao jiang ji
 社交难题	she jiao nan ti
 社会时钟	she hui shi zhong
+社会裁	she hui cai
 社保代缴	she bao dai jiao
 社区书记	she qu shu ji
 社区盾	she qu dun
@@ -19734,6 +19849,7 @@ use_preset_vocabulary: true
 科学吃素	ke xue chi su
 科学摸鱼	ke xue mo yu
 科学闪耀中国	ke xue shan yao zhong guo
+科安创能	ke an chuang neng
 科尔利	ke er li
 科幻恐怖	ke huan kong bu
 科技交流	ke ji jiao liu
@@ -20193,6 +20309,7 @@ use_preset_vocabulary: true
 米爆	mi bao
 米爆娃	mi bao wa
 米特隆	mi te long
+米球	mi qiu
 米米嘟	mi mi du
 米耀荣	mi yao rong
 米菲声明	mi fei sheng ming
@@ -20281,6 +20398,7 @@ use_preset_vocabulary: true
 索伯	suo bo
 索嗨嗨	suo hai hai
 索拉里斯	suo la li si
+索莫	suo mo
 索财	suo cai
 紧急戒严	jin ji jie yan
 紧急戒严令	jin ji jie yan ling
@@ -20649,6 +20767,7 @@ use_preset_vocabulary: true
 网剧冬至开播	wang ju dong zhi kai bo
 网剧千香	wang ju qian xiang
 网剧原罪开播	wang ju yuan zui kai bo
+网剧双轨致歉	wang ju shuang gui zhi qian
 网剧夺娶定档	wang ju duo qu ding dang
 网剧夺娶开播	wang ju duo qu kai bo
 网剧归棹定档	wang ju gui zhao ding dang
@@ -20736,6 +20855,7 @@ use_preset_vocabulary: true
 罗马教皇	luo ma jiao huang
 罗马诺	luo ma nuo
 罚球绝杀	fa qiu jue sha
+罡子	gang zi
 置顶自己	zhi ding zi ji
 羊了个羊	yang le ge yang
 羊力大仙	yang li da xian
@@ -20965,9 +21085,11 @@ use_preset_vocabulary: true
 老破小	lao po xiao
 老碗会	lao wan hui
 老莫	lao mo
+老蒋巨靠谱	lao jiang ju kao pu
 老蒯太带派了	lao kuai tai dai pai le
 老谋子	lao mou zi
 老车主	lao che zhu
+老钱风	lao qian feng
 老铁崩不住了	lao tie beng bu zhu le
 老铲	lao chan
 老陈醋冰美式	lao chen cu bing mei shi
@@ -21022,6 +21144,7 @@ use_preset_vocabulary: true
 耕地保护	geng di bao hu
 耳光也是光	er guang ye shi guang
 耳朵经济火了	er duo jing ji huo le
+耳机分你一半	er ji fen ni yi ban
 耳蜗钉	er wo ding
 耶咦	ye yi
 耶尔	ye er
@@ -21037,6 +21160,7 @@ use_preset_vocabulary: true
 职业背债人	zhi ye bei zhai ren
 职业观的成熟	zhi ye guan de cheng shu
 职场倦怠感	zhi chang juan dai gan
+职场奶茶文化	zhi chang nai cha wen hua
 职场自救	zhi chang zi jiu
 职场蠢人	zhi chang chun ren
 职场过度疲劳	zhi chang guo du pi lao
@@ -21207,6 +21331,7 @@ use_preset_vocabulary: true
 胚膜	pei mo
 胜决	sheng jue
 胜利之舞	sheng li zhi wu
+胜利日阅兵	sheng li ri yue bing
 胜意你糊涂啊	sheng yi ni hu tu a
 胜意反杀王擎	sheng yi fan sha wang qing
 胜意自尽	sheng yi zi jin
@@ -21231,6 +21356,7 @@ use_preset_vocabulary: true
 胡夏演唱会	hu xia yan chang hui
 胡夏现场	hu xia xian chang
 胡夏直播	hu xia zhi bo
+胡夏被蝉咬了	hu xia bei chan yao le
 胡夏裤子崩了	hu xia ku zi beng le
 胡彦斌吧唧	hu yan bin ba ji
 胡志明之歌	hu zhi ming zhi ge
@@ -21328,9 +21454,11 @@ use_preset_vocabulary: true
 腾圣	teng sheng
 腾子	teng zi
 腾讯中秋片单	teng xun zhong qiu pian dan
+腾讯更新片单	teng xun geng xin pian dan
 腾讯片单	teng xun pian dan
 腾讯白皮书	teng xun bai pi shu
 腿姐九页纸	tui jie jiu ye zhi
+腿筋	tui jin
 膏膏	gao gao
 膜拜膜拜你	mo bai mo bai ni
 臣子恨	chen zi hen
@@ -21347,6 +21475,7 @@ use_preset_vocabulary: true
 自制酸梅汤	zi zhi suan mei tang
 自制鲜鸡汁	zi zhi xian ji zhi
 自动去壳	zi dong qu ke
+自动扣款服务	zi dong kou kuan fu wu
 自卑与超越	zi bei yu chao yue
 自卑心态	zi bei xin tai
 自印	zi yin
@@ -21355,6 +21484,7 @@ use_preset_vocabulary: true
 自在甄稀	zi zai zhen xi
 自在飞	zi zai fei
 自奏	zi zou
+自套	zi tao
 自己包的	zi ji bao de
 自己卷自己	zi ji juan zi ji
 自己想太多	zi ji xiang tai duo
@@ -21846,6 +21976,7 @@ use_preset_vocabulary: true
 荡寇志	dang kou zhi
 荣一鸣	rong yi ming
 荣华与炎日之途	rong hua yu yan ri zhi tu
+荣昌卤鹅	rong chang lu e
 荣梓杉开学	rong zi shan kai xue
 荣梓杉球鞋	rong zi shan qiu xie
 荣梓杉田嘉瑞	rong zi shan tian jia rui
@@ -21912,6 +22043,7 @@ use_preset_vocabulary: true
 莫塔里	mo ta li
 莫拉塔离婚	mo la ta li hun
 莫文蔚毛不易	mo wen wei mao bu yi
+莫斯科红场	mo si ke hong chang
 莫浪	mo lang
 莫米松	mo mi song
 莫莉的冒险	mo li de mao xian
@@ -21922,6 +22054,7 @@ use_preset_vocabulary: true
 莱万梅开二度	lai wan mei kai er du
 莱万欧冠百球	lai wan ou guan bai qiu
 莱伊	lai yi
+莱伊拉	lai yi la
 莱依拉	lai yi la
 莱加内斯	lai jia nei si
 莱卡恩	lai ka en
@@ -21932,6 +22065,7 @@ use_preset_vocabulary: true
 莱欧斯	lai ou si
 莱欧斯利	lai ou si li
 莱茵体育	lai yin ti yu
+莱茵多特	lai yin duo te
 莱西奥	lai xi ao
 莱马	lai ma
 莲花古城	lian hua gu cheng
@@ -21941,10 +22075,12 @@ use_preset_vocabulary: true
 莲藕花生酪	lian ou hua sheng lao
 莲见	lian jian
 获胜了	huo sheng le
+莹勾	ying gou
 莽侠	mang xia
 莽夫与蛇	mang fu yu she
 莽小五上树	mang xiao wu shang shu
 莽村的爱	mang cun de ai
+菀菀类卿	wan wan lei qing
 菅原	jian yuan
 菅原孝支	jian yuan xiao zhi
 菇菇白珍珠汤	gu gu bai zhen zhu tang
@@ -21982,6 +22118,7 @@ use_preset_vocabulary: true
 萝卜快跑	luo bo kuai pao
 萝卜菜的一生	luo bo cai de yi sheng
 萝莉池	luo li chi
+萤勾	ying gou
 萤火新生	ying huo xin sheng
 萤火突击	ying huo tu ji
 萤火虫价格	ying huo chong jia ge
@@ -22002,6 +22139,7 @@ use_preset_vocabulary: true
 萧逸辉光之诗	xiao yi hui guang zhi shi
 萧逸阿努比斯	xiao yi a nu bi si
 萨勒芬妮	sa lei fen ni
+萨卡空门不进	sa ka kong men bu jin
 萨尔贡	sa er gong
 萨巴伦卡	sa ba lun ka
 萨巴伦卡好壮	sa ba lun ka hao zhuang
@@ -22221,6 +22359,8 @@ use_preset_vocabulary: true
 藏海	cang hai
 藏海传下证	cang hai chuan xia zheng
 藏海传团综	cang hai chuan tuan zong
+藏海传档期	cang hai chuan dang qi
+藏海传赴山海	cang hai chuan fu shan hai
 藏海大人	cang hai da ren
 藏海花尺度	cang hai hua chi du
 藏海花开播	cang hai hua kai bo
@@ -22438,6 +22578,7 @@ use_preset_vocabulary: true
 蜂花致歉	feng hua zhi qian
 蜂蜜桂花炖奶	feng mi gui hua dun nai
 蜈蚣耳塞	wu gong er sai
+蜘蛛猫	zhi zhu mao
 蜚蜚	fei fei
 蜜城之恋	mi cheng zhi lian
 蜜桃四季春	mi tao si ji chun
@@ -22570,6 +22711,8 @@ use_preset_vocabulary: true
 被精神病	bei jing shen bing
 被绝杀了	bei jue sha le
 被苗安素死气	bei miao an su si qi
+被观察	bei guan cha
+被资本做局了	bei zi ben zuo ju le
 被踩断	bei cai duan
 被逆转	bei ni zhuan
 被逆转的神	bei ni zhuan de shen
@@ -22586,6 +22729,7 @@ use_preset_vocabulary: true
 装狐媚子	zhuang hu mei zi
 装甲车模拟器	zhuang jia che mo ni qi
 裘德	qiu de
+裘锡圭	qiu xi gui
 裙摆并非枷锁	qun bai bing fei jia suo
 裴党义子	pei dang yi zi
 裴文宣	pei wen xuan
@@ -22610,6 +22754,7 @@ use_preset_vocabulary: true
 西哈莫尼	xi ha mo ni
 西塔老太太	xi ta lao tai tai
 西天取竹	xi tian qu zhu
+西安冰雹	xi an bing bao
 西安千古情	xi an qian gu qing
 西安大风	xi an da feng
 西安演唱会	xi an yan chang hui
@@ -22962,6 +23107,7 @@ use_preset_vocabulary: true
 请勿随意模仿	qing wu sui yi mo fang
 请吃小蛇面包	qing chi xiao she mian bao
 请君入我怀	qing jun ru wo huai
+请客卡	qing ke ka
 请家堂	qing jia tang
 请年	qing nian
 请开灯	qing kai deng
@@ -23041,6 +23187,7 @@ use_preset_vocabulary: true
 谈薪技巧	tan xin ji qiao
 谋定天下	mou ding tian xia
 谋曹丕	mou cao pi
+谍战上不封顶	die zhan shang bu feng ding
 谍报上不封顶	die bao shang bu feng ding
 谍网追凶	die wang zhui xiong
 谎言之躯开机	huang yan zhi qu kai ji
@@ -23951,6 +24098,7 @@ use_preset_vocabulary: true
 过年祝福	guo nian zhu fu
 过度努力	guo du nu li
 过度执法	guo du zhi fa
+过拟合	guo ni he
 过敏星人	guo min xing ren
 过敏自救手册	guo min zi jiu shou ce
 过教师节	guo jiao shi jie
@@ -24020,6 +24168,7 @@ use_preset_vocabulary: true
 还得是郁可唯	hai de shi yu ke wei
 还得看詹姆斯	hai de kan zhan mu si
 还得跌	hai de die
+还想生啊	hai xiang sheng a
 还我周末	hai wo zhou mo
 还我妈咪	hai wo ma mi
 还我妈生伞	hai wo ma sheng san
@@ -24060,6 +24209,7 @@ use_preset_vocabulary: true
 还这么热	hai zhe me re
 还魂伞	huan hun san
 这一刻钟	zhe yi ke zhong
+这一带有蛇妖	zhe yi dai you she yao
 这一球	zhe yi qiu
 这一球真脏啊	zhe yi qiu zhen zang a
 这一站是上岸	zhe yi zhan shi shang an
@@ -24217,6 +24367,7 @@ use_preset_vocabulary: true
 迷之操作	mi zhi cao zuo
 迷你巴士	mi ni ba shi
 迷妄之塔	mi wang zhi ta
+迷宫中的人	mi gong zhong de ren
 迷宫的十字路口	mi gong de shi zi lu kou
 迷宫饭	mi gong fan
 迷宫饭呢	mi gong fan ne
@@ -24534,6 +24685,7 @@ use_preset_vocabulary: true
 郎平时代	lang ping shi dai
 郑中基近照	zheng zhong ji jin zhao
 郑中基退圈	zheng zhong ji tui quan
+郑丹妮退团	zheng dan ni tui tuan
 郑云龙周望高	zheng yun long zhou wang gao
 郑北	zheng bei
 郑号锡退伍	zheng hao xi tui wu
@@ -24753,6 +24905,7 @@ use_preset_vocabulary: true
 重肖	zhong xiao
 重走西游	zhong zou xi you
 重返未来	chong fan wei lai
+重逢的季节	chong feng de ji jie
 重铸中路荣光	zhong zhu zhong lu rong guang
 重铸器	zhong zhu qi
 重阳佳节	chong yang jia jie
@@ -24780,6 +24933,7 @@ use_preset_vocabulary: true
 野生植物	ye sheng zhi wu
 野馄饨	ye hun tun
 野鸡榜	ye ji bang
+量产博世	liang chan bo shi
 量产版	liang chan ban
 量产车	liang chan che
 量大管饱	liang da guan bao
@@ -24797,17 +24951,22 @@ use_preset_vocabulary: true
 金价又发疯	jin jia you fa feng
 金价又新高了	jin jia you xin gao le
 金价又涨了	jin jia you zhang le
+金价反复震荡	jin jia fan fu zhen dang
 金价大跳水	jin jia da tiao shui
 金价开跌	jin jia kai die
 金价持续飙涨	jin jia chi xu biao zhang
 金价昨夜跳水	jin jia zuo ye tiao shui
 金价昨晚大跌	jin jia zuo wan da die
+金价极速转跌	jin jia ji su zhuan die
 金价深夜跳水	jin jia shen ye tiao shui
 金价猛烈跳水	jin jia meng lie tiao shui
+金价突然跳水	jin jia tu ran tiao shui
+金价突然转跌	jin jia tu ran zhuan die
 金价跳水	jin jia tiao shui
 金价跳水了	jin jia tiao shui le
 金价跳水原因	jin jia tiao shui yuan yin
 金价转跌	jin jia zhuan die
+金价返涨	jin jia fan zhang
 金价连续跳水	jin jia lian xu tiao shui
 金价高位回落	jin jia gao wei hui luo
 金俊勉哭了	jin jun mian ku le
@@ -24952,6 +25111,7 @@ use_preset_vocabulary: true
 金赛纶的人生	jin sai lun de ren sheng
 金赛纶的画	jin sai lun de hua
 金赛纶超短发	jin sai lun chao duan fa
+金道英演唱会	jin dao ying yan chang hui
 金钟仁回归	jin zhong ren hui gui
 金钟仁退伍	jin zhong ren tui wu
 金钟国做医美	jin zhong guo zuo yi mei
@@ -24968,7 +25128,9 @@ use_preset_vocabulary: true
 金靖孕肚大片	jin jing yun du da pian
 金靖状态好好	jin jing zhuang tai hao hao
 金靖生子	jin jing sheng zi
+金靖穿搭	jin jing chuan da
 金鞋	jin xie
+金韩彬直播	jin han bin zhi bo
 金马奖红毯	jin ma jiang hong tan
 金鱼杆	jin yu gan
 金鱼竿	jin yu gan
@@ -25325,6 +25487,7 @@ use_preset_vocabulary: true
 阿其那	a qi na
 阿凡达重映	a fan da chong ying
 阿刃	a ren
+阿切尔比	a qie er bi
 阿利森谈夺冠	a li sen tan duo guan
 阿勒泰	a lei tai
 阿勒泰下雪了	a lei tai xia xue le
@@ -25445,6 +25608,7 @@ use_preset_vocabulary: true
 陈好履历	chen hao lv li
 陈好怕狗	chen hao pa gou
 陈好晒备课照	chen hao shai bei ke zhao
+陈妍希哭戏	chen yan xi ku xi
 陈妍希方声明	chen yan xi fang sheng ming
 陈妍希方辟谣	chen yan xi fang pi yao
 陈子贤	chen zi xian
@@ -25788,6 +25952,7 @@ use_preset_vocabulary: true
 雍西	yong xi
 雨夜劈头士	yu ye pi tou shi
 雨夜瓶邪	yu ye ping xie
+雨大的很	yu da de hen
 雨姐家的狗	yu jie jia de gou
 雨是神的烟花	yu shi shen de yan hua
 雨林爱发生	yu lin ai fa sheng
@@ -25917,6 +26082,7 @@ use_preset_vocabulary: true
 霜降了	shuang jiang le
 霜降文案	shuang jiang wen an
 霞蝶	xia die
+露帕	lu pa
 露营车	lu ying che
 霸凌者	ba ling zhe
 霸总与灰姑娘	ba zong yu hui gu niang
@@ -25945,6 +26111,7 @@ use_preset_vocabulary: true
 青提茉莉	qing ti mo li
 青旅团建篇	qing lv tuan jian pian
 青春不问何时	qing chun bu wen he shi
+青春中国	qing chun zhong guo
 青春华章	qing chun hua zhang
 青春回场	qing chun hui chang
 青春大讲堂	qing chun da jiang tang
@@ -26018,6 +26185,7 @@ use_preset_vocabulary: true
 面具团	mian ju tuan
 面刀	mian dao
 面向儿童	mian xiang er tong
+面批	mian pi
 面灯	mian deng
 面筋哥去世	mian jin ge qu shi
 面试表现好	mian shi biao xian hao
@@ -26267,6 +26435,7 @@ use_preset_vocabulary: true
 风挺大的	feng ting da de
 风是风	feng shi feng
 风景都很好	feng jing dou hen hao
+风月不相关	feng yue bu xiang guan
 风有了形状	feng you le xing zhuang
 风来西林	feng lai xi lin
 风流一代	feng liu yi dai
@@ -26416,6 +26585,7 @@ use_preset_vocabulary: true
 香港行	xiang gang xing
 香港队	xiang gang dui
 香煎萝卜糕	xiang jian luo bo gao
+香糕塔之章	xiang gao ta zhi zhang
 香缇莫	xiang ti mo
 香缇莫旗袍	xiang ti mo qi pao
 香芋冰淇淋	xiang yu bing qi lin
@@ -26528,6 +26698,7 @@ use_preset_vocabulary: true
 马赫环	ma he huan
 马雪阳当爸	ma xue yang dang ba
 马靖翔	ma jing xiang
+马頔好画	ma di hao hua
 马頔怎么了	ma di zen me le
 马頔深夜发博	ma di shen ye fa bo
 马頔深夜发文	ma di shen ye fa wen
@@ -26731,6 +26902,7 @@ use_preset_vocabulary: true
 魏大勋陈伟霆	wei da xun chen wei ting
 魏如萱新专辑	wei ru xuan xin zhuan ji
 魏子宸	wei zi chen
+魏晨吴昕拥抱	wei chen wu xin yong bao
 魏晨唱了破晓	wei chen chang le po xiao
 魏晨疯人愿	wei chen feng ren yuan
 魏晨音乐节	wei chen yin yue jie
@@ -26860,6 +27032,7 @@ use_preset_vocabulary: true
 鹤观	he guan
 鹤辞	he ci
 鹤辞道歉	he ci dao qian
+鹦鹉热	ying wu re
 鹦鹉绿	ying wu lv
 鹭卓	lu zhuo
 鹭卓不断航行	lu zhuo bu duan hang xing
@@ -26890,6 +27063,7 @@ use_preset_vocabulary: true
 鹿晗好拽	lu han hao zhuai
 鹿晗对不起	lu han dui bu qi
 鹿晗工作花絮	lu han gong zuo hua xu
+鹿晗应援棒	lu han ying yuan bang
 鹿晗录制五哈	lu han lu zhi wu ha
 鹿晗抖音直播	lu han dou yin zhi bo
 鹿晗排练彩蛋	lu han pai lian cai dan
@@ -27172,6 +27346,7 @@ use_preset_vocabulary: true
 黑田勇树离婚	hei tian yong shu li hun
 黑白人间	hei bai ren jian
 黑白决	hei bai jue
+黑白张正	hei bai zhang zheng
 黑白森林定档	hei bai sen lin ding dang
 黑白绝	hei bai jue
 黑白艺术家	hei bai yi shu jia
