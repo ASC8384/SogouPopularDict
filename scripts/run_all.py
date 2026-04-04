@@ -21,12 +21,17 @@ def run_script(script_path, args=None):
     cmd = [sys.executable, script_path]
     if args:
         cmd.extend(args)
-    
+
     logger.info(f"运行脚本: {' '.join(cmd)}")
-    
+
     try:
         result = subprocess.run(cmd, check=True, capture_output=True, text=True)
         logger.info(f"脚本输出: {result.stdout}")
+
+        for line in reversed(result.stdout.splitlines()):
+            if line.startswith("STATUS:"):
+                return line.split(":", 1)[1].strip()
+
         return True
     except subprocess.CalledProcessError as e:
         logger.error(f"脚本运行失败: {e}")
@@ -37,19 +42,23 @@ def main():
     """主函数"""
     # 获取脚本目录
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    
+
     # 下载并转换词库
     download_script = os.path.join(script_dir, 'download_and_convert.py')
-    if not run_script(download_script):
+    download_status = run_script(download_script)
+    if not download_status or download_status == 'error':
         logger.error("下载词库失败，退出")
         return False
-    
+    if download_status == 'no_update':
+        logger.info("当前无更新，跳过Rime转换")
+        return True
+
     # 转换为Rime格式
     convert_script = os.path.join(script_dir, 'convert_to_rime.py')
     if not run_script(convert_script):
         logger.error("转换为Rime格式失败，退出")
         return False
-    
+
     logger.info("所有任务完成")
     return True
 

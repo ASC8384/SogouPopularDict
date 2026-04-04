@@ -31,13 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: 下载并转换词库
+      - name: 运行完整更新流程
         run: |
-          python scripts/download_and_convert.py
-          
-      - name: 转换为Rime格式
-        run: |
-          python scripts/convert_to_rime.py
+          python scripts/run_all.py
           
       - name: 提交更新
         run: |
