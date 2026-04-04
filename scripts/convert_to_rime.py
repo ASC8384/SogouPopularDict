@@ -3,6 +3,7 @@
 
 import os
 import sys
+import json
 import yaml
 import logging
 import argparse
@@ -25,6 +26,7 @@ CURRENT_TXT_PATH = os.path.join(DATA_DIR, 'sogou_network_words_current.txt')
 ACCUMULATED_TXT_PATH = os.path.join(DATA_DIR, 'sogou_network_words_accumulated.txt')
 RIME_CURRENT_PATH = os.path.join(DATA_DIR, 'luna_pinyin.sogoupopular.current.dict.yaml')
 RIME_ACCUMULATED_PATH = os.path.join(DATA_DIR, 'luna_pinyin.sogoupopular.dict.yaml')
+VERSION_INFO_PATH = os.path.join(DATA_DIR, 'version_info.json')
 
 def load_words_from_txt(txt_path):
     """从TXT文件加载词条"""
@@ -48,11 +50,35 @@ def get_pinyin(word):
         logger.warning(f"获取拼音失败: {word}, {e}")
         return ''
 
-def convert_to_rime_yaml(words, output_path, dict_name):
+def load_version_info():
+    """从文件加载版本信息"""
+    if not os.path.exists(VERSION_INFO_PATH):
+        return {}
+
+    try:
+        with open(VERSION_INFO_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        logger.error(f"加载版本信息失败: {e}")
+        return {}
+
+
+def format_version_from_version_info(version_info):
+    """从版本信息中生成 Rime 版本号"""
+    update_time = version_info.get('update_time', '')
+    if update_time:
+        try:
+            return datetime.strptime(update_time, '%Y-%m-%d %H:%M:%S').strftime('%Y.%m.%d')
+        except ValueError:
+            logger.warning(f"无法解析更新时间: {update_time}")
+
+    return datetime.now().strftime('%Y.%m.%d')
+
+
+def convert_to_rime_yaml(words, output_path, version=None):
     """将词条转换为Rime YAML格式"""
-    # 准备YAML头部
-    now = datetime.now().strftime('%Y.%m.%d')
-    
+    yaml_version = version or datetime.now().strftime('%Y.%m.%d')
+
     # 写入YAML文件
     try:
         with open(output_path, 'w', encoding='utf-8') as f:
@@ -74,25 +100,25 @@ def convert_to_rime_yaml(words, output_path, dict_name):
             f.write("# 重新部署即可\n")
             f.write("#\n")
             f.write("---\n")
-            
+
             # 根据是当前版本还是累积版本设置不同的name
             name = "luna_pinyin.sogoupopular.current" if "current" in output_path else "luna_pinyin.sogoupopular"
-            
+
             f.write(f"name: {name}\n")
-            f.write(f"version: \"{now}\"\n")
+            f.write(f"version: \"{yaml_version}\"\n")
             f.write("sort: by_weight\n")
             f.write("use_preset_vocabulary: true\n")
-            
+
             # 写入分隔符
             f.write("...\n\n")
-            
+
             # 写入词条 - 移除权重计算
             for word in words:
                 pinyin = get_pinyin(word)
                 if pinyin:
                     # 不再计算权重，直接写入词条和拼音
                     f.write(f"{word}\t{pinyin}\n")
-        
+
         logger.info(f"已生成Rime词库: {output_path}")
         return True
     except Exception as e:
@@ -110,21 +136,23 @@ def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     
     success = True
-    
+    version_info = load_version_info()
+    yaml_version = format_version_from_version_info(version_info)
+
     # 转换当前词库
     if not args.accumulated_only:
         words = load_words_from_txt(CURRENT_TXT_PATH)
         if words:
-            if not convert_to_rime_yaml(words, RIME_CURRENT_PATH, '搜狗网络流行新词（当前版本）'):
+            if not convert_to_rime_yaml(words, RIME_CURRENT_PATH, version=yaml_version):
                 success = False
         else:
             logger.warning(f"当前词库为空或不存在")
-    
+
     # 转换累积词库
     if not args.current_only:
         words = load_words_from_txt(ACCUMULATED_TXT_PATH)
         if words:
-            if not convert_to_rime_yaml(words, RIME_ACCUMULATED_PATH, '搜狗网络流行新词（累积版本）'):
+            if not convert_to_rime_yaml(words, RIME_ACCUMULATED_PATH, version=yaml_version):
                 success = False
         else:
             logger.warning(f"累积词库为空或不存在")
