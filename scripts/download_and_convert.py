@@ -329,15 +329,15 @@ def parse_scel_file(scel_path):
 
             logger.info(f"成功解析词库，共找到 {len(words)} 个词条")
 
-            # 如果没有找到任何词条，使用备用方法或返回默认值
+            # 如果没有找到任何词条，返回空列表并由上层决定是否中止流程
             if not words:
-                logger.warning("未解析到任何词条，使用默认值")
-                return ["网络流行词1", "网络流行词2", "测试词条"]
+                logger.warning("未解析到任何词条")
+                return []
 
             return words
     except Exception as e:
         logger.error(f"解析词库文件失败: {e}", exc_info=True)
-        return ["网络流行词1", "网络流行词2", "测试词条"]
+        return []
 
 
 def save_to_txt(words, file_path):
