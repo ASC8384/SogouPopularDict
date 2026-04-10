@@ -1,5 +1,6 @@
 import builtins
 import io
+import pathlib
 
 import scripts.download_and_convert as download_and_convert
 
@@ -56,6 +57,81 @@ def test_get_latest_version_info_returns_none_when_version_missing(monkeypatch):
     monkeypatch.setattr(builtins, "open", lambda *args, **kwargs: io.StringIO())
 
     assert download_and_convert.get_latest_version_info() is None
+
+
+def test_get_latest_version_info_prefers_page_version_over_download_count(monkeypatch):
+    class FakeResponse:
+        status_code = 200
+        text = """
+        <html>
+          <head><title>网络流行新词_搜狗输入法词库</title></head>
+          <body>
+            <span class="num_mark">1415088</span>
+            <ul>
+              <li><div>更&nbsp;&nbsp;&nbsp;新：2026-04-09 20:50:03</div></li>
+              <li><div>版&nbsp;&nbsp;&nbsp;本：第6400个版本</div></li>
+            </ul>
+            词条: 123 个
+          </body>
+        </html>
+        """
+
+        def raise_for_status(self):
+            return None
+
+    monkeypatch.setattr(download_and_convert.requests, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(builtins, "open", lambda *args, **kwargs: io.StringIO())
+
+    version_info = download_and_convert.get_latest_version_info()
+
+    assert version_info == {
+        "version": 6400,
+        "download_count": 1415088,
+        "name": "网络流行新词_搜狗输入法",
+        "update_time": "2026-04-09 20:50:03",
+        "word_count": 123,
+    }
+
+
+def test_get_latest_version_info_returns_none_when_page_version_missing_but_download_count_exists(monkeypatch):
+    class FakeResponse:
+        status_code = 200
+        text = """
+        <html>
+          <head><title>网络流行新词_搜狗输入法词库</title></head>
+          <body>
+            <span class="num_mark">1415088</span>
+            <ul>
+              <li><div>更&nbsp;&nbsp;&nbsp;新：2026-04-09 20:50:03</div></li>
+            </ul>
+            词条: 123 个
+          </body>
+        </html>
+        """
+
+        def raise_for_status(self):
+            return None
+
+    monkeypatch.setattr(download_and_convert.requests, "get", lambda *args, **kwargs: FakeResponse())
+    monkeypatch.setattr(builtins, "open", lambda *args, **kwargs: io.StringIO())
+
+    assert download_and_convert.get_latest_version_info() is None
+
+
+def test_normalize_version_info_preserves_explicit_version():
+    normalized = download_and_convert.normalize_version_info(
+        {"version": 6400, "download_count": 1415088}
+    )
+
+    assert normalized["version"] == 6400
+    assert normalized["download_count"] == 1415088
+
+
+def test_should_skip_update_returns_false_for_legacy_download_count_version():
+    latest_version_info = {"version": 6400, "download_count": 1415088}
+    local_version_info = {"version": 1415049, "download_count": 1415049}
+
+    assert download_and_convert.should_skip_update(latest_version_info, local_version_info) is False
 
 
 def test_run_update_returns_error_when_latest_version_info_missing(monkeypatch):
@@ -124,3 +200,9 @@ def test_run_update_returns_error_and_does_not_persist_when_parse_produces_no_wo
 
     assert download_and_convert.run_update() == "error"
     assert calls == []
+
+
+def test_load_version_info_is_defined_once():
+    source = pathlib.Path(download_and_convert.__file__).read_text(encoding="utf-8")
+
+    assert source.count("def load_version_info(") == 1

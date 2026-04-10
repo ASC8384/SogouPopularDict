@@ -6,6 +6,7 @@ import re
 import sys
 import json
 import time
+import html
 import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
@@ -53,35 +54,36 @@ def get_latest_version_info():
             f.write(response.text)
         logger.debug(f"响应内容已保存到: {debug_html_path}")
 
-        # 提取版本信息
+        page_text = html.unescape(response.text)
         version_info = {}
 
-        # 根据debug_response.html内容提取信息
-        # 提取下载次数
         download_count_match = re.search(r'<span class="num_mark">(\d+)</span>', response.text)
         if download_count_match:
             download_count = int(download_count_match.group(1))
             version_info['download_count'] = download_count
             logger.debug(f"提取到下载次数: {download_count}")
-            # 使用下载次数作为版本号（因为每次更新下载次数会增加）
-            version_info['version'] = download_count
 
-        # 从页面标题或其他地方提取词库名称
+        version_match = re.search(r'版\s*本[:：]\s*第\s*(\d+)\s*个版本', page_text)
+        if version_match:
+            version_info['version'] = int(version_match.group(1))
+            logger.debug(f"提取到页面版本号: {version_info['version']}")
+
         name_match = re.search(r'<title>(.*?)词库.*?</title>', response.text)
         if name_match:
             version_info['name'] = name_match.group(1).strip()
             logger.debug(f"提取到词库名称: {version_info['name']}")
 
-        # 提取当前时间作为更新时间
-        version_info['update_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        update_time_match = re.search(r'更\s*新[:：]\s*([0-9]{4}-[0-9]{2}-[0-9]{2}\s+[0-9]{2}:[0-9]{2}:[0-9]{2})', page_text)
+        if update_time_match:
+            version_info['update_time'] = update_time_match.group(1)
+        else:
+            version_info['update_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        # 提取词条数量（如果页面上有）
-        word_count_match = re.search(r'词\s*条[:：]\s*(\d+)\s*个', response.text, re.IGNORECASE)
+        word_count_match = re.search(r'词\s*条[:：]\s*(\d+)\s*个', page_text, re.IGNORECASE)
         if word_count_match:
             version_info['word_count'] = int(word_count_match.group(1))
             logger.debug(f"提取到词条数量: {version_info['word_count']}")
 
-        # 如果没有提取到版本信息，返回 None 交由上层处理
         if not version_info or 'version' not in version_info:
             logger.warning("无法提取完整版本信息")
             return None
@@ -99,15 +101,27 @@ def normalize_version_info(version_info):
         return None
 
     normalized = dict(version_info)
-    download_count = normalized.get('download_count')
-    if download_count is not None:
-        normalized['version'] = download_count
+    if normalized.get('version') is None and normalized.get('download_count') is not None:
+        normalized['version'] = normalized['download_count']
 
     return normalized
 
 
+def is_legacy_download_count_version(version_info):
+    """判断版本信息是否仍使用下载量作为版本号"""
+    if not version_info:
+        return False
+
+    version = version_info.get('version')
+    download_count = version_info.get('download_count')
+    return version is not None and download_count is not None and version == download_count
+
+
 def should_skip_update(latest_version_info, local_version_info):
     """判断是否应跳过更新"""
+    if is_legacy_download_count_version(local_version_info) and not is_legacy_download_count_version(latest_version_info):
+        return False
+
     latest_version = latest_version_info.get('version', 0)
     local_version = local_version_info.get('version', 0)
     return latest_version <= local_version
@@ -146,19 +160,6 @@ def save_version_info(version_info):
         logger.info(f"版本信息已保存: {version_info}")
     except Exception as e:
         logger.error(f"保存版本信息失败: {e}")
-
-
-def load_version_info():
-    """从文件加载版本信息"""
-    if not os.path.exists(VERSION_INFO_PATH):
-        return {'version': 0, 'update_time': '', 'word_count': 0}
-
-    try:
-        with open(VERSION_INFO_PATH, 'r', encoding='utf-8') as f:
-            return normalize_version_info(json.load(f)) or {'version': 0, 'update_time': '', 'word_count': 0}
-    except Exception as e:
-        logger.error(f"加载版本信息失败: {e}")
-        return {'version': 0, 'update_time': '', 'word_count': 0}
 
 
 def download_scel_file():
