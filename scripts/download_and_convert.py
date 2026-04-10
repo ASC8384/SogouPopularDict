@@ -81,31 +81,65 @@ def get_latest_version_info():
             version_info['word_count'] = int(word_count_match.group(1))
             logger.debug(f"提取到词条数量: {version_info['word_count']}")
 
-        # 如果没有提取到版本信息，使用默认值
+        # 如果没有提取到版本信息，返回 None 交由上层处理
         if not version_info or 'version' not in version_info:
-            logger.warning("无法提取完整版本信息，使用默认值")
-            version_info = {
-                'version': int(time.time()),  # 使用当前时间戳作为版本号
-                'update_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                'word_count': 25000,
-                'name': '网络流行新词'
-            }
+            logger.warning("无法提取完整版本信息")
+            return None
 
         return version_info
     except Exception as e:
         logger.error(f"获取版本信息失败: {e}", exc_info=True)
-        # 返回默认值而不是None
-        logger.warning("由于获取版本信息失败，使用默认值")
-        return {
-            'version': int(time.time()),  # 使用当前时间戳作为版本号
-            'update_time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'word_count': 25000,
-            'name': '网络流行新词'
-        }
+        logger.warning("由于获取版本信息失败，返回空结果")
+        return None
+
+
+def normalize_version_info(version_info):
+    """归一化版本信息，确保比较字段语义一致"""
+    if not version_info:
+        return None
+
+    normalized = dict(version_info)
+    download_count = normalized.get('download_count')
+    if download_count is not None:
+        normalized['version'] = download_count
+
+    return normalized
+
+
+def should_skip_update(latest_version_info, local_version_info):
+    """判断是否应跳过更新"""
+    latest_version = latest_version_info.get('version', 0)
+    local_version = local_version_info.get('version', 0)
+    return latest_version <= local_version
+
+
+def build_version_info_for_save(latest_version_info):
+    """构建保存到本地的版本信息"""
+    return {
+        'version': latest_version_info.get('version', 0),
+        'download_count': latest_version_info.get('download_count', latest_version_info.get('version', 0)),
+        'update_time': latest_version_info.get('update_time', ''),
+        'word_count': latest_version_info.get('word_count', 0),
+        'name': latest_version_info.get('name', ''),
+    }
+
+
+def load_version_info():
+    """从文件加载版本信息"""
+    if not os.path.exists(VERSION_INFO_PATH):
+        return {'version': 0, 'update_time': '', 'word_count': 0}
+
+    try:
+        with open(VERSION_INFO_PATH, 'r', encoding='utf-8') as f:
+            return normalize_version_info(json.load(f)) or {'version': 0, 'update_time': '', 'word_count': 0}
+    except Exception as e:
+        logger.error(f"加载版本信息失败: {e}")
+        return {'version': 0, 'update_time': '', 'word_count': 0}
 
 
 def save_version_info(version_info):
     """保存版本信息到文件"""
+    version_info = build_version_info_for_save(version_info)
     try:
         with open(VERSION_INFO_PATH, 'w', encoding='utf-8') as f:
             json.dump(version_info, f, ensure_ascii=False, indent=2)
@@ -121,7 +155,7 @@ def load_version_info():
 
     try:
         with open(VERSION_INFO_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            return normalize_version_info(json.load(f)) or {'version': 0, 'update_time': '', 'word_count': 0}
     except Exception as e:
         logger.error(f"加载版本信息失败: {e}")
         return {'version': 0, 'update_time': '', 'word_count': 0}
@@ -392,12 +426,18 @@ def run_update(force_update=False):
     """执行词库更新并返回状态"""
     os.makedirs(DATA_DIR, exist_ok=True)
 
-    latest_version_info = get_latest_version_info()
+    latest_version_info = normalize_version_info(get_latest_version_info())
     local_version_info = load_version_info()
 
     if force_update:
         logger.info("强制更新模式")
-    elif latest_version_info.get('version', 0) <= local_version_info.get('version', 0):
+        if not latest_version_info:
+            latest_version_info = build_version_info_for_save(local_version_info)
+            latest_version_info['update_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    elif not latest_version_info:
+        logger.error("无法获取有效的版本信息")
+        return STATUS_ERROR
+    elif should_skip_update(latest_version_info, local_version_info):
         logger.info(f"当前已是最新版本: {local_version_info.get('version', 0)}，无需更新")
         return STATUS_NO_UPDATE
 
@@ -417,6 +457,7 @@ def run_update(force_update=False):
     if not update_accumulated_words(words):
         return STATUS_ERROR
 
+    latest_version_info['word_count'] = len(words)
     save_version_info(latest_version_info)
 
     logger.info("词库更新完成")
