@@ -50,8 +50,7 @@ def main():
         logger.error("下载词库失败，退出")
         return False
     if download_status == 'no_update':
-        logger.info("当前无更新，跳过Rime转换")
-        return True
+        logger.info("当前无更新，仍执行Rime转换以刷新派生产物")
 
     # 转换为Rime格式
     convert_script = os.path.join(script_dir, 'convert_to_rime.py')
